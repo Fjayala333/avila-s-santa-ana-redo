@@ -50,16 +50,16 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-b border-border bg-background">
+      <div className="border-b border-ink-foreground/15 bg-ink text-ink-foreground">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-4 lg:flex-row lg:justify-between">
           <a href="#top" className="shrink-0">
             <img src={site.logo} alt="Avila's El Ranchito Santa Ana" className="h-16 w-auto" />
           </a>
           <nav aria-label="Main">
-            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-sans text-sm font-semibold uppercase tracking-widest text-foreground/80">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-sans text-sm font-semibold uppercase tracking-widest text-ink-foreground/85">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="transition-colors hover:text-primary">
+                  <a href={item.href} className="transition-colors hover:text-accent">
                     {item.label}
                   </a>
                 </li>
