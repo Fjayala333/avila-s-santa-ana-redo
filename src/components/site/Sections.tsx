@@ -134,8 +134,8 @@ export function OurStory() {
           </p>
         </div>
         <img
-          src={heroSlides[0].src}
-          alt={heroSlides[0].alt}
+          src={heroSlides[0]!.src}
+          alt={heroSlides[0]!.alt}
           loading="lazy"
           className="aspect-[4/3] w-full rounded-sm object-cover"
         />
@@ -150,7 +150,7 @@ export function Menus() {
       <SectionHeading kicker="Eat With Us" title="Our Menus">
         Mama Avila's recipes, made fresh every day in Santa Ana.
       </SectionHeading>
-      <Tabs defaultValue={menus[0].id} className="mt-10">
+      <Tabs defaultValue={menus[0]!.id} className="mt-10">
         <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
           {menus.map((menu) => (
             <TabsTrigger key={menu.id} value={menu.id} className="text-xs font-bold uppercase tracking-widest">
