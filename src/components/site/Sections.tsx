@@ -160,9 +160,16 @@ export function Highlights() {
     <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
       <div className="grid gap-8 md:grid-cols-3">
         {highlightCards.map((card, i) => (
-          <Reveal as="article" key={card.kicker} delay={i * 140} className="flex flex-col">
-            <h2 className="font-display text-2xl text-foreground">{card.kicker}</h2>
-            <div className="img-zoom-host mt-4 rounded-sm">
+          <Reveal
+            as="article"
+            key={card.kicker}
+            delay={i * 160}
+            className="card-motion group flex flex-col rounded-sm p-1"
+          >
+            <h2 className="underline-grow group-hover:underline-grow-active w-fit font-display text-2xl text-foreground">
+              {card.kicker}
+            </h2>
+            <div className="img-zoom-host shine-host mt-5 rounded-sm ring-1 ring-foreground/5 transition-shadow duration-500 group-hover:ring-primary/30">
               <img
                 src={card.image}
                 alt={card.alt}
@@ -170,12 +177,20 @@ export function Highlights() {
                 className="img-zoom aspect-[4/3] w-full rounded-sm object-cover"
               />
             </div>
-            <p className="mt-4 grow text-sm leading-relaxed text-muted-foreground">{card.text}</p>
+            <p className="mt-4 grow text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
+              {card.text}
+            </p>
             <a
               href={card.href}
-              className="cta mt-5 inline-flex w-fit rounded-sm bg-primary px-5 py-2.5 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
+              className="cta mt-5 inline-flex w-fit items-center gap-2 rounded-sm bg-primary px-5 py-2.5 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
             >
               {card.cta}
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
             </a>
           </Reveal>
         ))}
