@@ -1,3 +1,5 @@
+import logoHd from "@/assets/avilas-logo-hd.png.asset.json";
+
 export const site = {
   name: "Avila's El Ranchito",
   city: "Santa Ana",
@@ -7,7 +9,7 @@ export const site = {
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Avila%27s+El+Ranchito+2201+E+1st+St+Santa+Ana+CA+92705",
   yelpUrl: "https://www.yelp.com/biz/avilas-el-ranchito-santa-ana",
-  logo: "https://avilasnewportbeach.com/wp-content/uploads/2024/10/Avilas-El-Ranchito-Logo.png",
+  logo: logoHd.url,
 };
 
 const u = (id: string) => `https://www.avilassantaana.com/lovable-uploads/${id}.png`;
