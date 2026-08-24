@@ -84,7 +84,7 @@ export function SiteFooter() {
 
       <div className="border-t border-ink-foreground/15">
         <p className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-ink-foreground/60">
-          © 2012 – {new Date().getFullYear()} Avila's El Ranchito Santa Ana • All Rights Reserved
+          © 2026 Avila's El Ranchito Santa Ana • All Rights Reserved
         </p>
       </div>
     </footer>
