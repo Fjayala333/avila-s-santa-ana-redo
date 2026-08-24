@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -7,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/site/Reveal";
+import { cn } from "@/lib/utils";
 import {
   site,
   heroSlides,
@@ -39,6 +42,29 @@ function SectionHeading({
 }
 
 export function Hero() {
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    onSelect();
+    api.on("select", onSelect);
+
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    if (!reduce) {
+      timer = setInterval(() => api.scrollNext(), 5000);
+    }
+
+    return () => {
+      api.off("select", onSelect);
+      if (timer) clearInterval(timer);
+    };
+  }, [api]);
+
   return (
     <section className="bg-secondary/60">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
@@ -76,23 +102,54 @@ export function Hero() {
           </div>
         </div>
 
-        <Carousel opts={{ loop: true }} className="animate-fade-up w-full" style={{ animationDelay: "300ms" }}>
-          <CarouselContent>
-            {heroSlides.map((slide) => (
-              <CarouselItem key={slide.src}>
-                <div className="img-zoom-host rounded-sm shadow-xl">
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    className="img-zoom aspect-[4/3] w-full rounded-sm object-cover"
-                  />
-                </div>
-              </CarouselItem>
+        <div className="animate-fade-up animate-float" style={{ animationDelay: "300ms" }}>
+          <Carousel opts={{ loop: true }} setApi={setApi} className="w-full">
+            <CarouselContent>
+              {heroSlides.map((slide, i) => (
+                <CarouselItem key={slide.src}>
+                  <div className="img-zoom-host relative rounded-sm shadow-xl">
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      className={cn(
+                        "aspect-[4/3] w-full rounded-sm object-cover",
+                        current === i && "animate-ken-burns",
+                      )}
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-4 pt-12">
+                      <p
+                        key={`${slide.src}-${current === i}`}
+                        className={cn(
+                          "font-sans text-xs font-bold uppercase tracking-[0.2em] text-ink-foreground",
+                          current === i && "animate-fade-up",
+                        )}
+                      >
+                        {slide.alt}
+                      </p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-3 transition-transform hover:scale-110" />
+            <CarouselNext className="right-3 transition-transform hover:scale-110" />
+          </Carousel>
+
+          <div className="mt-4 flex justify-center gap-2">
+            {heroSlides.map((slide, i) => (
+              <button
+                key={slide.src}
+                type="button"
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => api?.scrollTo(i)}
+                className={cn(
+                  "h-2 rounded-full bg-foreground/25 transition-all duration-500",
+                  current === i ? "w-8 bg-primary" : "w-2 hover:bg-foreground/50",
+                )}
+              />
             ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-3 transition-transform hover:scale-110" />
-          <CarouselNext className="right-3 transition-transform hover:scale-110" />
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
