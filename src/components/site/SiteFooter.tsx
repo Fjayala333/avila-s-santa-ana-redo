@@ -5,10 +5,24 @@ export function SiteFooter() {
     <footer id="contact" className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <img src={site.logo} alt="Avila's El Ranchito" className="h-20 w-auto brightness-110" />
-          <p className="mt-4 max-w-xs text-sm text-ink-foreground/70">
+          <a
+            href="#top"
+            className="group relative inline-flex items-center justify-center rounded-sm p-3 ring-1 ring-inset ring-primary/25 transition-all duration-500 hover:ring-primary/60"
+          >
+            <span
+              aria-hidden
+              className="absolute inset-0 rounded-sm bg-primary/10 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100"
+            />
+            <img
+              src={site.logo}
+              alt="Avila's El Ranchito"
+              className="relative h-24 w-auto brightness-110 drop-shadow-[0_6px_18px_oklch(0_0_0/45%)] transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+          </a>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-foreground/70">
             Family owned, family operated and family loved since 1966.
           </p>
+          <div className="mt-4 h-px w-24 bg-gradient-to-r from-primary via-primary/40 to-transparent" />
         </div>
 
         <div>
