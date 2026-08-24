@@ -21,8 +21,8 @@ export function SiteFooter() {
               </a>
             </p>
             <p>
-              <a href="mailto:santaana@avilaselranchito.com" className="hover:text-accent">
-                santaana@avilaselranchito.com
+              <a href="mailto:avilascatering@gmail.com" className="hover:text-accent">
+                avilascatering@gmail.com
               </a>
             </p>
           </address>
