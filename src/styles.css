@@ -202,6 +202,19 @@
   animation: ranchito-float 6s ease-in-out infinite;
 }
 
+@keyframes ranchito-ken-burns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@utility animate-ken-burns {
+  animation: ranchito-ken-burns 6s ease-out both;
+}
+
 /* Image zoom on hover, used with an overflow-hidden wrapper. */
 @utility img-zoom {
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
