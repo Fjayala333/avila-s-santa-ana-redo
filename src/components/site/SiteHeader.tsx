@@ -7,7 +7,6 @@ const nav = [
   { label: "Menus", href: "#menus" },
   { label: "Party Trays", href: "#party-trays" },
   { label: "Private Fiesta", href: "#private-fiesta" },
-  { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
 ];
 
