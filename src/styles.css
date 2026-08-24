@@ -151,4 +151,107 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* --- Motion ------------------------------------------------------------- */
+
+@keyframes ranchito-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ranchito-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+@utility reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@utility animate-fade-up {
+  animation: ranchito-fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-float {
+  animation: ranchito-float 6s ease-in-out infinite;
+}
+
+/* Image zoom on hover, used with an overflow-hidden wrapper. */
+@utility img-zoom {
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility img-zoom-host {
+  overflow: hidden;
+
+  &:hover .img-zoom {
+    transform: scale(1.06);
+  }
+}
+
+@utility lift {
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -22px oklch(0.26 0.008 70 / 45%);
+  }
+}
+
+@utility cta {
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
