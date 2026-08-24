@@ -268,3 +268,104 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- Accessibility adjustments (widget-driven) ---------- */
+html.a11y-seizureSafe *,
+html.a11y-seizureSafe *::before,
+html.a11y-seizureSafe *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+html.a11y-seizureSafe img,
+html.a11y-seizureSafe video {
+  filter: saturate(0.6);
+}
+
+html.a11y-lowVision body {
+  font-size: 112.5%;
+  letter-spacing: 0.01em;
+}
+
+html.a11y-lowVision {
+  filter: contrast(1.15);
+}
+
+html.a11y-adhd *,
+html.a11y-adhd *::before,
+html.a11y-adhd *::after {
+  animation: none !important;
+}
+
+html.a11y-adhd body {
+  --a11y-focus: 1;
+}
+
+html.a11y-cognitive body {
+  line-height: 1.85;
+  word-spacing: 0.12em;
+}
+
+html.a11y-cognitive p,
+html.a11y-cognitive li {
+  max-width: 68ch;
+}
+
+html.a11y-keyboardNav :focus-visible,
+html.a11y-screenReader :focus-visible {
+  outline: 3px solid #0b57e3 !important;
+  outline-offset: 3px !important;
+}
+
+html.a11y-keyboardNav a,
+html.a11y-keyboardNav button {
+  scroll-margin-top: 6rem;
+}
+
+html.a11y-screenReader body {
+  --a11y-sr: 1;
+}
+
+html.a11y-olderAdults body {
+  font-size: 118%;
+  line-height: 1.8;
+}
+
+html.a11y-olderAdults a,
+html.a11y-olderAdults button {
+  text-underline-offset: 3px;
+}
+
+html.a11y-bigText body {
+  font-size: 125%;
+}
+
+html.a11y-highContrast {
+  filter: contrast(1.35) saturate(1.1);
+}
+
+html.a11y-highlightLinks a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  outline: 2px solid #0b57e3;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+html.a11y-readableFont body,
+html.a11y-readableFont h1,
+html.a11y-readableFont h2,
+html.a11y-readableFont h3,
+html.a11y-readableFont h4 {
+  font-family: Verdana, Tahoma, "Source Sans 3", system-ui, sans-serif !important;
+  letter-spacing: 0.01em;
+}
+
+html.a11y-textAlignLeft p,
+html.a11y-textAlignLeft h1,
+html.a11y-textAlignLeft h2,
+html.a11y-textAlignLeft h3,
+html.a11y-textAlignLeft li,
+html.a11y-textAlignLeft .text-center {
+  text-align: left !important;
+}
