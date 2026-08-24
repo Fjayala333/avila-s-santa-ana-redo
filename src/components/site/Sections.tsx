@@ -61,13 +61,13 @@ export function Hero() {
           </h1>
           <p
             className="animate-fade-up mt-6 text-lg leading-relaxed text-muted-foreground"
-            style={{ animationDelay: "260ms" }}
+            style={{ animationDelay: "320ms" }}
           >
             Avila's El Ranchito in Santa Ana was built by Victor Avila in 1983 and is still run by him today
             with the help of long-time General Manager Karen Edwards. Authentic Mexican cuisine in the heart of
             Santa Ana, served with love and tradition.
           </p>
-          <div className="animate-fade-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: "400ms" }}>
+          <div className="animate-fade-up mt-8 flex flex-wrap justify-center gap-3 lg:justify-start" style={{ animationDelay: "420ms" }}>
             <a
               href={site.phoneHref}
               className="cta rounded-sm bg-primary px-6 py-3 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
