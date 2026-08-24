@@ -42,25 +42,32 @@ export function Hero() {
   return (
     <section className="bg-secondary/60">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
-        <div>
-          <p className="animate-fade-up font-sans text-xs font-bold uppercase tracking-[0.3em] text-primary">
+        <div className="text-center lg:text-left">
+          <div className="animate-fade-up mb-6 inline-flex items-center justify-center rounded-full border border-primary/30 bg-ink p-4 shadow-sm">
+            <img
+              src={site.logo}
+              alt="Avila's El Ranchito Santa Ana"
+              className="h-20 w-auto transition-transform duration-500 hover:scale-105 sm:h-24"
+            />
+          </div>
+          <p className="animate-fade-up font-sans text-xs font-bold uppercase tracking-[0.3em] text-primary" style={{ animationDelay: "120ms" }}>
             Since 1966
           </p>
           <h1
             className="animate-fade-up mt-4 font-display text-4xl leading-[1.1] text-foreground sm:text-5xl"
-            style={{ animationDelay: "120ms" }}
+            style={{ animationDelay: "220ms" }}
           >
             Family Owned, Family Operated and Family Loved since 1966
           </h1>
           <p
             className="animate-fade-up mt-6 text-lg leading-relaxed text-muted-foreground"
-            style={{ animationDelay: "260ms" }}
+            style={{ animationDelay: "320ms" }}
           >
             Avila's El Ranchito in Santa Ana was built by Victor Avila in 1983 and is still run by him today
             with the help of long-time General Manager Karen Edwards. Authentic Mexican cuisine in the heart of
             Santa Ana, served with love and tradition.
           </p>
-          <div className="animate-fade-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: "400ms" }}>
+          <div className="animate-fade-up mt-8 flex flex-wrap justify-center gap-3 lg:justify-start" style={{ animationDelay: "420ms" }}>
             <a
               href={site.phoneHref}
               className="cta rounded-sm bg-primary px-6 py-3 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
