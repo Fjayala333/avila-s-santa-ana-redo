@@ -42,13 +42,20 @@ export function Hero() {
   return (
     <section className="bg-secondary/60">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
-        <div>
-          <p className="animate-fade-up font-sans text-xs font-bold uppercase tracking-[0.3em] text-primary">
+        <div className="text-center lg:text-left">
+          <div className="animate-fade-up mb-6 inline-flex items-center justify-center rounded-full border border-primary/30 bg-background p-4 shadow-sm">
+            <img
+              src={site.logo}
+              alt="Avila's El Ranchito Santa Ana"
+              className="h-20 w-auto transition-transform duration-500 hover:scale-105 sm:h-24"
+            />
+          </div>
+          <p className="animate-fade-up font-sans text-xs font-bold uppercase tracking-[0.3em] text-primary" style={{ animationDelay: "120ms" }}>
             Since 1966
           </p>
           <h1
             className="animate-fade-up mt-4 font-display text-4xl leading-[1.1] text-foreground sm:text-5xl"
-            style={{ animationDelay: "120ms" }}
+            style={{ animationDelay: "220ms" }}
           >
             Family Owned, Family Operated and Family Loved since 1966
           </h1>
