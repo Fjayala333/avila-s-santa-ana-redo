@@ -60,7 +60,7 @@ export function SiteFooter() {
             />
             <button
               type="submit"
-              className="rounded-sm bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-90"
+              className="cta rounded-sm bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
             >
               Subscribe
             </button>
