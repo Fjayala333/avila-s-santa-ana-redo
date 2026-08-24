@@ -120,11 +120,11 @@ export const menus = [
 ];
 
 export const hours = [
-  "Sunday 9 AM–9 PM",
+  "Sunday 11 AM–9 PM",
   "Monday 11 AM–9 PM",
   "Tuesday 11 AM–9 PM",
   "Wednesday 11 AM–9 PM",
   "Thursday 11 AM–9 PM",
   "Friday 11 AM–10 PM",
-  "Saturday 9 AM–10 PM",
+  "Saturday 11 AM–10 PM",
 ];
