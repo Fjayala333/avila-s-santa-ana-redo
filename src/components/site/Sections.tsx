@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -7,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/site/Reveal";
+import { cn } from "@/lib/utils";
 import {
   site,
   heroSlides,
