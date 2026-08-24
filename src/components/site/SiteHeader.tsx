@@ -50,16 +50,23 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-b border-ink-foreground/15 bg-ink text-ink-foreground">
+      <div className="sticky top-0 z-50 border-b border-ink-foreground/15 bg-ink/95 text-ink-foreground backdrop-blur supports-[backdrop-filter]:bg-ink/80">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-4 lg:flex-row lg:justify-between">
           <a href="#top" className="shrink-0">
-            <img src={site.logo} alt="Avila's El Ranchito Santa Ana" className="h-16 w-auto" />
+            <img
+              src={site.logo}
+              alt="Avila's El Ranchito Santa Ana"
+              className="h-16 w-auto transition-transform duration-500 hover:scale-105"
+            />
           </a>
           <nav aria-label="Main">
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-sans text-sm font-semibold uppercase tracking-widest text-ink-foreground/85">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="transition-colors hover:text-accent">
+                  <a
+                    href={item.href}
+                    className="relative inline-block transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:text-accent hover:after:origin-bottom-left hover:after:scale-x-100"
+                  >
                     {item.label}
                   </a>
                 </li>
