@@ -7,18 +7,20 @@ export function SiteFooter() {
         <div>
           <a
             href="#top"
-            className="group relative inline-flex items-center justify-center rounded-sm p-3 ring-1 ring-inset ring-primary/25 transition-all duration-500 hover:ring-primary/60"
+            className="group relative inline-flex flex-col items-center justify-center rounded-sm px-5 py-4 text-center ring-1 ring-inset ring-primary/25 transition-all duration-500 hover:ring-primary/60"
           >
             <span
               aria-hidden
               className="absolute inset-0 rounded-sm bg-primary/10 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100"
             />
-            <img
-              src={site.logo}
-              alt="Avila's El Ranchito"
-              className="relative h-24 w-auto brightness-110 drop-shadow-[0_6px_18px_oklch(0_0_0/45%)] transition-transform duration-700 ease-out group-hover:scale-105"
-            />
+            <span className="relative font-serif text-3xl leading-none tracking-[0.08em] text-ink-foreground transition-transform duration-700 ease-out group-hover:scale-105">
+              Avila's
+            </span>
+            <span className="relative mt-1.5 font-sans text-xs font-bold uppercase tracking-[0.35em] text-accent">
+              El Ranchito
+            </span>
           </a>
+
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-foreground/70">
             Family owned, family operated and family loved since 1966.
           </p>
