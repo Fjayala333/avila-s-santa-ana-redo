@@ -107,7 +107,7 @@ export const menus: Menu[] = [
   {
     id: "brunch-menu",
     label: "Brunch Menu",
-    blurb: "Served weekends. All Mexican dishes come with your choice of rice and beans or fresh fruit.",
+    blurb: "\n",
     menus: [
       {
         id: "brunch-food",
