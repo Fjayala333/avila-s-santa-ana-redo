@@ -1,4 +1,5 @@
 import { site, hours } from "../../lib/site-data";
+import logoAsset from "../../assets/avilas-logo-transparent.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -13,13 +14,11 @@ export function SiteFooter() {
               aria-hidden
               className="absolute inset-0 rounded-sm bg-primary/10 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100"
             />
-            <span className="relative font-wordmark text-4xl font-semibold uppercase leading-none tracking-[0.06em] text-ink-foreground transition-transform duration-700 ease-out group-hover:scale-105 md:text-5xl">
-              Avila's
-            </span>
-            <span className="relative mt-1.5 font-wordmark text-base font-semibold uppercase tracking-[0.3em] text-accent md:text-lg">
-              El Ranchito
-            </span>
-
+            <img
+              src={logoAsset.url}
+              alt="Avila's El Ranchito"
+              className="relative h-14 w-auto transition-transform duration-700 ease-out group-hover:scale-105 md:h-16"
+            />
           </a>
 
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-foreground/70">
