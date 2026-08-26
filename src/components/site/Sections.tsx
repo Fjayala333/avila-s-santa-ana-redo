@@ -19,6 +19,7 @@ import {
   partyTrays,
   experience,
   menus,
+  type MenuGroup,
 } from "@/lib/site-data";
 
 function SectionHeading({
@@ -231,14 +232,52 @@ export function OurStory() {
   );
 }
 
+function MenuGroups({ groups }: { groups: MenuGroup[] }) {
+  return (
+    <div className="mx-auto mt-8 max-w-3xl space-y-10">
+      {groups.map((group) => (
+        <div key={group.title}>
+          <h3 className="text-center font-display text-2xl text-foreground">{group.title}</h3>
+          {group.note ? (
+            <p className="mt-1 text-center text-xs uppercase tracking-widest text-muted-foreground">{group.note}</p>
+          ) : null}
+          <ul className="mt-5 divide-y divide-border">
+            {group.items.map((item, i) => (
+              <li
+                key={item.name}
+                className="animate-fade-up py-4"
+                style={{ animationDelay: `${100 + i * 60}ms` }}
+              >
+                <div className="flex items-baseline gap-3">
+                  <span className="font-display text-lg text-foreground">{item.name}</span>
+                  <span className="h-px flex-1 border-b border-dotted border-border" />
+                  {item.price ? (
+                    <span className="font-sans text-sm font-semibold text-accent-foreground">${item.price}</span>
+                  ) : null}
+                </div>
+                {item.description ? (
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function Menus() {
+  const firstMenu = menus[0]!;
+  const firstNested = firstMenu.menus?.[0] ?? firstMenu;
+
   return (
     <section id="menus" className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
       <SectionHeading kicker="Eat With Us" title="Our Menus">
         Mama Avila's recipes, made fresh every day in Santa Ana.
       </SectionHeading>
       <Reveal>
-        <Tabs defaultValue={menus[0]!.id} className="mt-10">
+        <Tabs defaultValue={firstMenu.id} className="mt-10">
           <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
             {menus.map((menu) => (
               <TabsTrigger
@@ -254,42 +293,29 @@ export function Menus() {
             <TabsContent key={menu.id} value={menu.id} className="mt-8">
               <div className="animate-fade-up rounded-sm border border-border bg-card p-6 sm:p-8">
                 <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
-                <div className="mx-auto mt-8 max-w-3xl space-y-10">
-                  {menu.groups.map((group) => (
-                    <div key={group.title}>
-                      <h3 className="text-center font-display text-2xl text-foreground">{group.title}</h3>
-                      {group.note ? (
-                        <p className="mt-1 text-center text-xs uppercase tracking-widest text-muted-foreground">
-                          {group.note}
-                        </p>
-                      ) : null}
-                      <ul className="mt-5 divide-y divide-border">
-                        {group.items.map((item, i) => (
-                          <li
-                            key={item.name}
-                            className="animate-fade-up py-4"
-                            style={{ animationDelay: `${100 + i * 60}ms` }}
-                          >
-                            <div className="flex items-baseline gap-3">
-                              <span className="font-display text-lg text-foreground">{item.name}</span>
-                              <span className="h-px flex-1 border-b border-dotted border-border" />
-                              {item.price ? (
-                                <span className="font-sans text-sm font-semibold text-accent-foreground">
-                                  ${item.price}
-                                </span>
-                              ) : null}
-                            </div>
-                            {item.description ? (
-                              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                                {item.description}
-                              </p>
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                {menu.groups ? (
+                  <MenuGroups groups={menu.groups} />
+                ) : menu.menus ? (
+                  <Tabs defaultValue={firstNested.id} className="mt-6">
+                    <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
+                      {menu.menus.map((sub) => (
+                        <TabsTrigger
+                          key={sub.id}
+                          value={sub.id}
+                          className="text-xs font-bold uppercase tracking-widest transition-all"
+                        >
+                          {sub.label}
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                    {menu.menus.map((sub) => (
+                      <TabsContent key={sub.id} value={sub.id} className="mt-6">
+                        <p className="text-center text-sm text-muted-foreground">{sub.blurb}</p>
+                        {sub.groups ? <MenuGroups groups={sub.groups} /> : null}
+                      </TabsContent>
+                    ))}
+                  </Tabs>
+                ) : null}
               </div>
             </TabsContent>
           ))}
