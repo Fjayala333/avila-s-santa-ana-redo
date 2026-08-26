@@ -254,43 +254,51 @@ export function Menus() {
             <TabsContent key={menu.id} value={menu.id} className="mt-8">
               <div className="animate-fade-up rounded-sm border border-border bg-card p-8">
                 <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
-                {menu.categories ? (
-                  <div className="mt-8 space-y-10">
-                    {menu.categories.map((cat) => (
-                      <div key={cat.title}>
-                        <h3 className="text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-primary">
-                          {cat.title}
-                        </h3>
-                        {cat.note ? (
-                          <p className="mt-1 text-center text-xs italic text-muted-foreground">{cat.note}</p>
-                        ) : null}
-                        <ul className="mx-auto mt-4 max-w-2xl divide-y divide-border">
-                          {cat.items.map((item, i) => (
-                            <li
-                              key={item}
-                              className="animate-fade-up py-3 text-center font-display text-lg text-foreground"
-                              style={{ animationDelay: `${100 + i * 70}ms` }}
-                            >
-                              {item}
-                            </li>
+                <div className="mt-8 space-y-12">
+                  {(["Food", "Drinks"] as const).map((group) => {
+                    const cats = menu.categories.filter((c) => c.group === group);
+                    if (cats.length === 0) return null;
+                    return (
+                      <div key={group}>
+                        <h3 className="text-center font-display text-3xl text-foreground">{group}</h3>
+                        <div className="mx-auto mt-1 h-px w-16 bg-primary/50" />
+                        <div className="mt-8 space-y-10">
+                          {cats.map((cat) => (
+                            <div key={cat.title}>
+                              <h4 className="text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                                {cat.title}
+                              </h4>
+                              {cat.note ? (
+                                <p className="mt-1 text-center text-xs italic text-muted-foreground">{cat.note}</p>
+                              ) : null}
+                              <ul className="mx-auto mt-4 max-w-2xl divide-y divide-border">
+                                {cat.items.map((item, i) => (
+                                  <li
+                                    key={item.name}
+                                    className="animate-fade-up py-3 text-center"
+                                    style={{ animationDelay: `${100 + i * 70}ms` }}
+                                  >
+                                    <p className="font-display text-lg text-foreground">
+                                      {item.name}
+                                      {item.price ? (
+                                        <span className="text-muted-foreground"> — {item.price}</span>
+                                      ) : null}
+                                    </p>
+                                    {item.desc ? (
+                                      <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
+                                        {item.desc}
+                                      </p>
+                                    ) : null}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                ) : (
-                  <ul className="mx-auto mt-6 max-w-2xl divide-y divide-border">
-                    {menu.items?.map((item, i) => (
-                      <li
-                        key={item}
-                        className="animate-fade-up py-3 text-center font-display text-lg text-foreground"
-                        style={{ animationDelay: `${100 + i * 70}ms` }}
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                    );
+                  })}
+                </div>
                 {menu.pdfUrl ? (
                   <div className="mt-8 text-center">
                     <a

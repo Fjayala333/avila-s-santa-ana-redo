@@ -84,17 +84,38 @@ export const experience = [
   { src: u("45f6ffc9-5292-4179-8ff0-2132b3b45c3c"), title: "Authentic Seafood Specialties", alt: "Grilled seafood platter with rice, vegetables and traditional sides" },
 ];
 
-export const menus = [
+export type MenuItem = { name: string; desc?: string; price?: string };
+export type MenuCategory = {
+  title: string;
+  group: "Food" | "Drinks";
+  note?: string;
+  items: MenuItem[];
+};
+export type Menu = {
+  id: string;
+  label: string;
+  blurb: string;
+  pdfUrl?: string;
+  categories: MenuCategory[];
+};
+
+export const menus: Menu[] = [
   {
     id: "all-day",
     label: "All Day Menu",
     blurb: "Mama Avila's classics served from open to close.",
-    items: [
-      "Chile Relleno — roasted pasilla, jack cheese, ranchera sauce",
-      "Enchiladas Suizas — chicken, tomatillo cream, melted cheese",
-      "Carne Asada — mesquite grilled, rice, beans, handmade tortillas",
-      "Camarones a la Diabla — shrimp in our house chile sauce",
-      "Tacos al Pastor — marinated pork, onion, cilantro, salsa verde",
+    categories: [
+      {
+        title: "House Favorites",
+        group: "Food",
+        items: [
+          { name: "Chile Relleno", desc: "Fire-roasted pasilla stuffed with jack cheese, topped with our ranchera sauce." },
+          { name: "Enchiladas Suizas", desc: "Shredded chicken rolled in corn tortillas, tomatillo cream and melted cheese." },
+          { name: "Carne Asada", desc: "Mesquite-grilled steak with rice, beans and handmade tortillas." },
+          { name: "Camarones a la Diabla", desc: "Sautéed shrimp simmered in our fiery house chile sauce." },
+          { name: "Tacos al Pastor", desc: "Chile-marinated pork with onion, cilantro and salsa verde." },
+        ],
+      },
     ],
   },
   {
@@ -105,61 +126,69 @@ export const menus = [
     categories: [
       {
         title: "Mexican Dishes",
+        group: "Food",
         note: "Served with your choice of Rice and Beans or Fresh Fruit.",
         items: [
-          "Quesadilla Egg-celente — 20",
-          "Breakfast Burrito — 20",
-          "Huevos con Chorizo — 20",
-          "Machaca con Huevos — 20",
-          "Huevos Rancheros — 19",
-          "Breakfast Tacos — 20",
-          "Mexican Chilaquiles — 19",
-          "Omelet Mexican Style — 19",
-          "Steak & Eggs — 24",
+          { name: "Quesadilla Egg-celente", price: "20", desc: "Flour tortilla filled with scrambled eggs, cheese and your choice of meat." },
+          { name: "Breakfast Burrito", price: "20", desc: "Eggs, potatoes, cheese and salsa fresca rolled in a warm flour tortilla." },
+          { name: "Huevos con Chorizo", price: "20", desc: "Scrambled eggs cooked with spicy Mexican chorizo." },
+          { name: "Machaca con Huevos", price: "20", desc: "Shredded beef scrambled with eggs, onion, bell pepper and tomato." },
+          { name: "Huevos Rancheros", price: "19", desc: "Two eggs over corn tortillas, smothered in ranchera sauce." },
+          { name: "Breakfast Tacos", price: "20", desc: "Soft tacos with eggs, cheese and your choice of bacon, chorizo or machaca." },
+          { name: "Mexican Chilaquiles", price: "19", desc: "Crispy tortilla chips simmered in salsa, topped with eggs, crema and queso." },
+          { name: "Omelet Mexican Style", price: "19", desc: "Three-egg omelet with onion, tomato, bell pepper and jack cheese." },
+          { name: "Steak & Eggs", price: "24", desc: "Grilled carne asada with two eggs any style." },
         ],
       },
       {
         title: "Kids Breakfast",
+        group: "Food",
         note: "Served with your choice of Rice and Beans, French Fries or Fresh Fruit.",
         items: [
-          "Kids Breakfast — 11.5",
-          "Mini Egg Quesadilla",
-          "Mini Breakfast Burrito",
+          { name: "Kids Breakfast", price: "11.5", desc: "Scrambled eggs with bacon or sausage for our littlest guests." },
+          { name: "Mini Egg Quesadilla", desc: "Small flour tortilla with scrambled egg and melted cheese." },
+          { name: "Mini Breakfast Burrito", desc: "Kid-sized burrito with eggs, cheese and potatoes." },
         ],
       },
       {
         title: "Menudo",
-        items: ["Menudo — 17.5"],
+        group: "Food",
+        items: [
+          { name: "Menudo", price: "17.5", desc: "Traditional slow-simmered red chile soup served with onion, cilantro and lime." },
+        ],
       },
       {
         title: "Breakfast Drinks",
+        group: "Drinks",
         items: [
-          "Champagne or Mimosa — 7",
-          "Absolut Peppar Bloody Mary — 11.5",
-          "Mexican Michelada — 9",
+          { name: "Champagne or Mimosa", price: "7", desc: "Chilled bubbles on their own or with fresh orange juice." },
+          { name: "Absolut Peppar Bloody Mary", price: "11.5", desc: "Pepper vodka, house bloody mix and a spicy garnish." },
+          { name: "Mexican Michelada", price: "9", desc: "Mexican beer with lime, savory spices and a chile salt rim." },
         ],
       },
       {
         title: "Skinny Cocktails",
+        group: "Drinks",
         items: [
-          "Cazadores Skinny Margarita — 15",
-          "Organic Margarita — 16",
-          "Skinny Cucumber Vodka Margarita — 15",
-          "Avila's Guave Margarita — 15",
-          "Skinny Coconut Margarita — 15",
+          { name: "Cazadores Skinny Margarita", price: "15", desc: "Cazadores blanco, fresh lime and agave — no mixers." },
+          { name: "Organic Margarita", price: "16", desc: "Organic tequila with fresh-squeezed lime and organic agave." },
+          { name: "Skinny Cucumber Vodka Margarita", price: "15", desc: "Vodka, muddled cucumber and lime over ice." },
+          { name: "Avila's Guava Margarita", price: "15", desc: "Tequila shaken with tropical guava and lime." },
+          { name: "Skinny Coconut Margarita", price: "15", desc: "Tequila, coconut and lime, light and refreshing." },
         ],
       },
       {
         title: "Popular Cocktails",
+        group: "Drinks",
         items: [
-          "Patrón Chambord Margarita — 16",
-          "Barcadi Mojito — 15",
-          "Cazadores Pink Cadillac Margarita — 15.5",
-          "Sangria — 14.5",
-          "Victor's Old Fashioned — 15",
-          "Coronarita — 19",
-          "Mexican Mule — 15",
-          "California Cadillac — 15.5",
+          { name: "Patrón Chambord Margarita", price: "16", desc: "Patrón Silver with a black raspberry Chambord float." },
+          { name: "Bacardi Mojito", price: "15", desc: "White rum, muddled mint, lime and soda." },
+          { name: "Cazadores Pink Cadillac Margarita", price: "15.5", desc: "Cazadores, Grand Marnier and a splash of cranberry." },
+          { name: "Sangria", price: "14.5", desc: "Red wine steeped with brandy and fresh fruit." },
+          { name: "Victor's Old Fashioned", price: "15", desc: "Whiskey, bitters and orange over a big cube." },
+          { name: "Coronarita", price: "19", desc: "Our house margarita crowned with an upturned Corona." },
+          { name: "Mexican Mule", price: "15", desc: "Tequila, ginger beer and lime served ice cold." },
+          { name: "California Cadillac", price: "15.5", desc: "Premium tequila and Grand Marnier over the rocks." },
         ],
       },
     ],
@@ -168,12 +197,24 @@ export const menus = [
     id: "happy-hour",
     label: "Happy Hour Menu",
     blurb: "Monday through Friday in the cantina and on the patio.",
-    items: [
-      "House Margarita — on the rocks or blended",
-      "Spicy Margarita — chili salt rim, fresh lime",
-      "Street Tacos — three per order",
-      "Nachos El Ranchito — beans, cheese, guacamole, crema",
-      "Guacamole & Chips — made fresh daily",
+    categories: [
+      {
+        title: "Bites",
+        group: "Food",
+        items: [
+          { name: "Street Tacos", desc: "Three per order with onion, cilantro and salsa." },
+          { name: "Nachos El Ranchito", desc: "Beans, melted cheese, guacamole and crema." },
+          { name: "Guacamole & Chips", desc: "Made fresh daily with ripe avocado and lime." },
+        ],
+      },
+      {
+        title: "Cantina",
+        group: "Drinks",
+        items: [
+          { name: "House Margarita", desc: "On the rocks or blended, with a salted rim." },
+          { name: "Spicy Margarita", desc: "Fresh lime and jalapeño with a chili salt rim." },
+        ],
+      },
     ],
   },
 ];
