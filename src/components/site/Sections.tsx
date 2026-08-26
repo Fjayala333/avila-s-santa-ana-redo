@@ -19,6 +19,7 @@ import {
   partyTrays,
   experience,
   menus,
+  type MenuGroup,
 } from "@/lib/site-data";
 
 function SectionHeading({
