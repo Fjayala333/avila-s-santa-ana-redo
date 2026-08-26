@@ -252,19 +252,44 @@ export function Menus() {
           </TabsList>
           {menus.map((menu) => (
             <TabsContent key={menu.id} value={menu.id} className="mt-8">
-              <div className="animate-fade-up rounded-sm border border-border bg-card p-8">
+              <div className="animate-fade-up rounded-sm border border-border bg-card p-6 sm:p-8">
                 <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
-                <ul className="mx-auto mt-6 max-w-2xl divide-y divide-border">
-                  {menu.items.map((item, i) => (
-                    <li
-                      key={item}
-                      className="animate-fade-up py-3 text-center font-display text-lg text-foreground"
-                      style={{ animationDelay: `${100 + i * 70}ms` }}
-                    >
-                      {item}
-                    </li>
+                <div className="mx-auto mt-8 max-w-3xl space-y-10">
+                  {menu.groups.map((group) => (
+                    <div key={group.title}>
+                      <h3 className="text-center font-display text-2xl text-foreground">{group.title}</h3>
+                      {group.note ? (
+                        <p className="mt-1 text-center text-xs uppercase tracking-widest text-muted-foreground">
+                          {group.note}
+                        </p>
+                      ) : null}
+                      <ul className="mt-5 divide-y divide-border">
+                        {group.items.map((item, i) => (
+                          <li
+                            key={item.name}
+                            className="animate-fade-up py-4"
+                            style={{ animationDelay: `${100 + i * 60}ms` }}
+                          >
+                            <div className="flex items-baseline gap-3">
+                              <span className="font-display text-lg text-foreground">{item.name}</span>
+                              <span className="h-px flex-1 border-b border-dotted border-border" />
+                              {item.price ? (
+                                <span className="font-sans text-sm font-semibold text-accent-foreground">
+                                  ${item.price}
+                                </span>
+                              ) : null}
+                            </div>
+                            {item.description ? (
+                              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                                {item.description}
+                              </p>
+                            ) : null}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </TabsContent>
           ))}
