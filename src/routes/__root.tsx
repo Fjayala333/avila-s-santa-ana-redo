@@ -124,12 +124,12 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-      <TooltipProvider>
+    <TooltipProvider>
+      <QueryClientProvider client={queryClient}>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
         <AccessibilityWidget />
-      </TooltipProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </TooltipProvider>
   );
 }
