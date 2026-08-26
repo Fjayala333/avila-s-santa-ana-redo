@@ -283,7 +283,7 @@ export function Menus() {
               <TabsTrigger
                 key={menu.id}
                 value={menu.id}
-                className="text-xs font-bold uppercase tracking-widest transition-all"
+                className="text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/15 hover:text-accent-foreground hover:shadow-sm data-[state=active]:hover:translate-y-0"
               >
                 {menu.label}
               </TabsTrigger>
