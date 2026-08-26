@@ -7,10 +7,10 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Reveal } from "@/components/site/Reveal";
-import { cn } from "@/lib/utils";
+} from "../ui/carousel";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Reveal } from "./Reveal";
+import { cn } from "../../lib/utils";
 import {
   site,
   heroSlides,
@@ -20,7 +20,7 @@ import {
   experience,
   menus,
   type MenuGroup,
-} from "@/lib/site-data";
+} from "../../lib/site-data";
 
 function SectionHeading({
   kicker,
@@ -291,7 +291,7 @@ export function Menus() {
           </TabsList>
           {menus.map((menu) => (
             <TabsContent key={menu.id} value={menu.id} className="mt-8">
-              <div className="animate-fade-up rounded-sm border border-border bg-card p-6 sm:p-8">
+              <div className="animate-fade-up max-h-[70vh] overflow-y-auto rounded-sm border border-border bg-card p-6 sm:p-8">
                 <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
                 {menu.groups ? (
                   <MenuGroups groups={menu.groups} />

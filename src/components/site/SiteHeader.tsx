@@ -4,8 +4,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { site, orderingPlatforms } from "@/lib/site-data";
+} from "../ui/dropdown-menu";
+import { site, orderingPlatforms } from "../../lib/site-data";
 
 const nav = [
   { label: "Home", href: "#top" },
