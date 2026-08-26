@@ -119,12 +119,6 @@ export const menus: Menu[] = [
             note: "All Mexican dishes are served with your choice of rice and beans or fresh fruit.",
             items: [
               {
-                name: "Quesadilla Egg-celente",
-                description:
-                  "A giant flour tortilla stuffed with scrambled eggs, cheese, avocado, Ortega chiles and tomatoes. Garnished with guacamole and sour cream.",
-                price: "20",
-              },
-              {
                 name: "Breakfast Burrito",
                 description:
                   "Stuffed with chicken or chorizo, salsa fresca, eggs and rice. Garnished with guacamole and sour cream.",
