@@ -1,4 +1,5 @@
 import { site, hours } from "../../lib/site-data";
+import logoAsset from "../../assets/avilas-logo-transparent.png.asset.json";
 
 export function SiteFooter() {
   return (

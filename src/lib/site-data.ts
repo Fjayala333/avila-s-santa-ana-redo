@@ -1,4 +1,4 @@
-import logoHd from "../assets/avilas-wordmark-transparent.png.asset.json";
+import logoHd from "../assets/avilas-logo-transparent.png.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",

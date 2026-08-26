@@ -1,4 +1,5 @@
 import { ChevronDown, MapPin, Phone } from "lucide-react";
+import logoAsset from "../../assets/avilas-logo-transparent.png.asset.json";
 import {
   DropdownMenu,
   DropdownMenuContent,
