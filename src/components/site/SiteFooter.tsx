@@ -13,12 +13,13 @@ export function SiteFooter() {
               aria-hidden
               className="absolute inset-0 rounded-sm bg-primary/10 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100"
             />
-            <span className="relative font-serif text-3xl leading-none tracking-[0.08em] text-ink-foreground transition-transform duration-700 ease-out group-hover:scale-105">
+            <span className="relative font-wordmark text-3xl font-semibold uppercase leading-none tracking-[0.06em] text-ink-foreground transition-transform duration-700 ease-out group-hover:scale-105">
               Avila's
             </span>
-            <span className="relative mt-1.5 font-sans text-xs font-bold uppercase tracking-[0.35em] text-accent">
+            <span className="relative mt-1.5 font-wordmark text-sm font-semibold uppercase tracking-[0.3em] text-accent">
               El Ranchito
             </span>
+
           </a>
 
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-foreground/70">
