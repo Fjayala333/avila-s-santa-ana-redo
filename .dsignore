@@ -1,0 +1,6 @@
+.lovable/
+src/routes/
+src/router.tsx
+src/routeTree.gen.ts
+src/server.ts
+src/start.ts
