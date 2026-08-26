@@ -1,4 +1,5 @@
 import logoHd from "@/assets/avilas-wordmark-transparent.png.asset.json";
+import brunchPdf from "@/assets/sa-brunch-menu.pdf.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",
@@ -99,12 +100,68 @@ export const menus = [
   {
     id: "brunch",
     label: "Brunch Menu",
-    blurb: "Weekends from 10 AM. Add a michelada or mimosa.",
-    items: [
-      "Huevos Rancheros — two eggs, ranchera sauce, rice and beans",
-      "Chilaquiles Verdes — crisp tortillas, tomatillo, crema, queso",
-      "Machaca con Huevo — shredded beef, peppers, onion, eggs",
-      "Breakfast Burrito — eggs, potato, cheese, choice of meat",
+    blurb: "Weekend brunch with Mama Avila's breakfast classics, plus micheladas, mimosas and margaritas.",
+    pdfUrl: brunchPdf.url,
+    categories: [
+      {
+        title: "Mexican Dishes",
+        note: "Served with your choice of Rice and Beans or Fresh Fruit.",
+        items: [
+          "Quesadilla Egg-celente — 20",
+          "Breakfast Burrito — 20",
+          "Huevos con Chorizo — 20",
+          "Machaca con Huevos — 20",
+          "Huevos Rancheros — 19",
+          "Breakfast Tacos — 20",
+          "Mexican Chilaquiles — 19",
+          "Omelet Mexican Style — 19",
+          "Steak & Eggs — 24",
+        ],
+      },
+      {
+        title: "Kids Breakfast",
+        note: "Served with your choice of Rice and Beans, French Fries or Fresh Fruit.",
+        items: [
+          "Kids Breakfast — 11.5",
+          "Mini Egg Quesadilla",
+          "Mini Breakfast Burrito",
+        ],
+      },
+      {
+        title: "Menudo",
+        items: ["Menudo — 17.5"],
+      },
+      {
+        title: "Breakfast Drinks",
+        items: [
+          "Champagne or Mimosa — 7",
+          "Absolut Peppar Bloody Mary — 11.5",
+          "Mexican Michelada — 9",
+        ],
+      },
+      {
+        title: "Skinny Cocktails",
+        items: [
+          "Cazadores Skinny Margarita — 15",
+          "Organic Margarita — 16",
+          "Skinny Cucumber Vodka Margarita — 15",
+          "Avila's Guave Margarita — 15",
+          "Skinny Coconut Margarita — 15",
+        ],
+      },
+      {
+        title: "Popular Cocktails",
+        items: [
+          "Patrón Chambord Margarita — 16",
+          "Barcadi Mojito — 15",
+          "Cazadores Pink Cadillac Margarita — 15.5",
+          "Sangria — 14.5",
+          "Victor's Old Fashioned — 15",
+          "Coronarita — 19",
+          "Mexican Mule — 15",
+          "California Cadillac — 15.5",
+        ],
+      },
     ],
   },
   {

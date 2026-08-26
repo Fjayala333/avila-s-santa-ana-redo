@@ -254,17 +254,56 @@ export function Menus() {
             <TabsContent key={menu.id} value={menu.id} className="mt-8">
               <div className="animate-fade-up rounded-sm border border-border bg-card p-8">
                 <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
-                <ul className="mx-auto mt-6 max-w-2xl divide-y divide-border">
-                  {menu.items.map((item, i) => (
-                    <li
-                      key={item}
-                      className="animate-fade-up py-3 text-center font-display text-lg text-foreground"
-                      style={{ animationDelay: `${100 + i * 70}ms` }}
+                {menu.categories ? (
+                  <div className="mt-8 space-y-10">
+                    {menu.categories.map((cat) => (
+                      <div key={cat.title}>
+                        <h3 className="text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                          {cat.title}
+                        </h3>
+                        {cat.note ? (
+                          <p className="mt-1 text-center text-xs italic text-muted-foreground">{cat.note}</p>
+                        ) : null}
+                        <ul className="mx-auto mt-4 max-w-2xl divide-y divide-border">
+                          {cat.items.map((item, i) => (
+                            <li
+                              key={item}
+                              className="animate-fade-up py-3 text-center font-display text-lg text-foreground"
+                              style={{ animationDelay: `${100 + i * 70}ms` }}
+                            >
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ul className="mx-auto mt-6 max-w-2xl divide-y divide-border">
+                    {menu.items?.map((item, i) => (
+                      <li
+                        key={item}
+                        className="animate-fade-up py-3 text-center font-display text-lg text-foreground"
+                        style={{ animationDelay: `${100 + i * 70}ms` }}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {menu.pdfUrl ? (
+                  <div className="mt-8 text-center">
+                    <a
+                      href={menu.pdfUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cta inline-flex items-center gap-2 rounded-sm border border-foreground/25 px-5 py-2.5 font-sans text-xs font-bold uppercase tracking-widest text-foreground hover:bg-foreground hover:text-background"
                     >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                      View Full PDF Menu
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                ) : null}
               </div>
             </TabsContent>
           ))}
