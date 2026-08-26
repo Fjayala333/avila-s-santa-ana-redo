@@ -8,9 +8,20 @@ export const site = {
   address: "2201 E 1st St, Santa Ana, CA 92705",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Avila%27s+El+Ranchito+2201+E+1st+St+Santa+Ana+CA+92705",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Avila%27s+El+Ranchito+2201+E+1st+St+Santa+Ana+CA+92705&output=embed",
   yelpUrl: "https://www.yelp.com/biz/avilas-el-ranchito-santa-ana",
+  googleReviewsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Avila%27s+El+Ranchito+2201+E+1st+St+Santa+Ana+CA+92705",
   logo: logoHd.url,
 };
+
+export const orderingPlatforms = [
+  { label: "Pickup (Order Direct)", href: "https://avilassa.hrpos.heartland.us/menu" },
+  { label: "Grubhub", href: "http://menus.fyi/12075824" },
+  { label: "DoorDash", href: "https://order.online/store/avila's-el-ranchito-santa-ana-35637929/?hideModal=true" },
+  { label: "FoodRunners", href: "https://thefoodrunners.com/food-delivery-restaurant/Orange%20County/Orange%20County/Avila's-El-Ranchito/27" },
+];
 
 const u = (id: string) => `https://www.avilassantaana.com/lovable-uploads/${id}.png`;
 
@@ -70,17 +81,6 @@ export const experience = [
   { src: u("503ff9ab-390e-4670-833e-e97319d55620"), title: "Cozy Outdoor Dining", alt: "Outdoor dining area with fire pit and El Ranchito sign" },
   { src: u("a3be50dc-364a-4135-9274-e34b4c5c70d1"), title: "Warm Interior Ambiance", alt: "Interior dining room with fireplace and rustic decor" },
   { src: u("45f6ffc9-5292-4179-8ff0-2132b3b45c3c"), title: "Authentic Seafood Specialties", alt: "Grilled seafood platter with rice, vegetables and traditional sides" },
-];
-
-export const reviews = [
-  { source: "Google", quote: "The chile relleno is the best I've had outside of Mexico City. Fluffy, savory, and full of flavor. Service was attentive without being intrusive.", name: "Ana Delgado", when: "6 days ago" },
-  { source: "Yelp", quote: "Margaritas are top-tier and the chips and salsa hit the spot the moment you sit down. A true Santa Ana staple.", name: "Brandon Walker", when: "3 days ago" },
-  { source: "Google", quote: "I brought my parents from out of town and they raved about the enchiladas suizas. Authentic, generous portions, and beautifully plated.", name: "Lucia Hernandez", when: "1 week ago" },
-  { source: "Yelp", quote: "Hands down my go-to spot for taco Tuesday. The al pastor is marinated perfectly and the tortillas taste handmade.", name: "Tyler Brooks", when: "4 days ago" },
-  { source: "Google", quote: "The patio is magical at sunset. We celebrated our anniversary here and the staff made us feel like royalty. Food was outstanding.", name: "Patricia Nguyen", when: "2 weeks ago" },
-  { source: "Yelp", quote: "Carne asada fries are a must. Generous portion, perfectly seasoned meat, and the guac is fresh. Will be back next weekend.", name: "Marcus Johnson", when: "5 days ago" },
-  { source: "Google", quote: "I've been a regular for years. The consistency of the food and service is what keeps me coming back. The Avila family knows hospitality.", name: "Elena Vargas", when: "3 weeks ago" },
-  { source: "Yelp", quote: "Tried the shrimp tacos based on a recommendation — phenomenal. Crisp, fresh, and the salsa pairings were on point.", name: "Kevin Patel", when: "1 week ago" },
 ];
 
 export const menus = [

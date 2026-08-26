@@ -40,6 +40,23 @@ export function SiteFooter() {
               </a>
             </p>
           </address>
+          <a
+            href={site.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open directions to Avila's El Ranchito in Google Maps"
+            className="mt-4 block overflow-hidden rounded-sm ring-1 ring-ink-foreground/15 transition-opacity hover:opacity-90"
+          >
+            <iframe
+              src={site.mapsEmbedUrl}
+              title="Map showing Avila's El Ranchito location"
+              loading="lazy"
+              className="h-40 w-full grayscale"
+              style={{ border: 0, pointerEvents: "none" }}
+              aria-hidden="true"
+              tabIndex={-1}
+            />
+          </a>
         </div>
 
         <div>

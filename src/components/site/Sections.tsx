@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Star } from "lucide-react";
 import {
   Carousel,
   type CarouselApi,
@@ -17,7 +18,6 @@ import {
   diningSlides,
   partyTrays,
   experience,
-  reviews,
   menus,
 } from "@/lib/site-data";
 
@@ -380,35 +380,54 @@ export function SignatureExperience() {
 export function Reviews() {
   return (
     <section id="reviews" className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
-      <SectionHeading kicker="Reviews" title="What Our Customers Say">
-        Hear from the families and food lovers who make El Ranchito their home away from home.
+      <SectionHeading kicker="Reviews" title="What Our Guests Are Saying">
+        Real reviews from real guests, straight from Google and Yelp.
       </SectionHeading>
       <Reveal>
-        <Carousel opts={{ loop: true, align: "start" }} className="mt-10">
-          <CarouselContent>
-            {reviews.map((review) => (
-              <CarouselItem key={review.name} className="md:basis-1/2 lg:basis-1/3">
-                <blockquote className="lift flex h-full flex-col rounded-sm border border-border bg-card p-6">
-                  <p className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-primary">
-                    {review.source}
-                  </p>
-                  <p className="mt-4 grow leading-relaxed text-foreground">“{review.quote}”</p>
-                  <footer className="mt-5 text-sm text-muted-foreground">
-                    {review.name} · {review.when}
-                  </footer>
-                </blockquote>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="-left-2 transition-transform hover:scale-110" />
-          <CarouselNext className="-right-2 transition-transform hover:scale-110" />
-        </Carousel>
+        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+          <a
+            href={site.googleReviewsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="lift group flex flex-col items-center gap-3 rounded-sm border border-border bg-card p-8 text-center"
+          >
+            <div className="flex gap-1 text-primary" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="size-5 fill-current" />
+              ))}
+            </div>
+            <p className="font-display text-xl text-foreground">Read our Google Reviews</p>
+            <p className="text-sm text-muted-foreground">See what guests say on Google</p>
+            <span className="cta mt-2 inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-2.5 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground group-hover:opacity-90">
+              View on Google
+              <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </span>
+          </a>
+          <a
+            href={site.yelpUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="lift group flex flex-col items-center gap-3 rounded-sm border border-border bg-card p-8 text-center"
+          >
+            <div className="flex gap-1 text-primary" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="size-5 fill-current" />
+              ))}
+            </div>
+            <p className="font-display text-xl text-foreground">Read our Yelp Reviews</p>
+            <p className="text-sm text-muted-foreground">See what guests say on Yelp</p>
+            <span className="cta mt-2 inline-flex items-center gap-2 rounded-sm border border-foreground/25 px-5 py-2.5 font-sans text-xs font-bold uppercase tracking-widest text-foreground group-hover:bg-foreground group-hover:text-background">
+              View on Yelp
+              <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </span>
+          </a>
+        </div>
       </Reveal>
       <Reveal delay={120} className="mt-10 text-center">
         <p className="text-muted-foreground">Have you dined with us? We'd love to hear about your experience!</p>
         <div className="mt-4 flex flex-wrap justify-center gap-3">
           <a
-            href={site.mapsUrl}
+            href={site.googleReviewsUrl}
             target="_blank"
             rel="noreferrer"
             className="cta rounded-sm bg-primary px-5 py-2.5 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"

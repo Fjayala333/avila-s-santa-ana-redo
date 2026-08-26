@@ -1,5 +1,11 @@
-import { MapPin, Phone } from "lucide-react";
-import { site } from "@/lib/site-data";
+import { ChevronDown, MapPin, Phone } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { site, orderingPlatforms } from "@/lib/site-data";
 
 const nav = [
   { label: "Home", href: "#top" },
@@ -31,12 +37,21 @@ export function SiteHeader() {
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <a
-              href={site.phoneHref}
-              className="rounded-sm border border-ink-foreground/40 px-3 py-1 font-semibold uppercase tracking-widest transition-colors hover:bg-ink-foreground hover:text-ink"
-            >
-              Order Online
-            </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="inline-flex items-center gap-1.5 rounded-sm border border-ink-foreground/40 px-3 py-1 font-semibold uppercase tracking-widest transition-colors hover:bg-ink-foreground hover:text-ink focus-visible:outline-none">
+                Order Online
+                <ChevronDown className="size-3.5" aria-hidden="true" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {orderingPlatforms.map((platform) => (
+                  <DropdownMenuItem key={platform.href} asChild>
+                    <a href={platform.href} target="_blank" rel="noreferrer">
+                      {platform.label}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <a
               href={site.mapsUrl}
               target="_blank"
