@@ -99,15 +99,21 @@ export type Menu = {
   id: string;
   label: string;
   blurb: string;
-  groups: MenuGroup[];
+  groups?: MenuGroup[];
+  menus?: Menu[];
 };
 
 export const menus: Menu[] = [
   {
-    id: "brunch-food",
-    label: "Brunch Food",
+    id: "brunch-menu",
+    label: "Brunch Menu",
     blurb: "Served weekends. All Mexican dishes come with your choice of rice and beans or fresh fruit.",
-    groups: [
+    menus: [
+      {
+        id: "brunch-food",
+        label: "Brunch Food",
+        blurb: "Served weekends. All Mexican dishes come with your choice of rice and beans or fresh fruit.",
+        groups: [
       {
         title: "Mexican Dishes",
         note: "All Mexican dishes are served with your choice of rice and beans or fresh fruit.",
