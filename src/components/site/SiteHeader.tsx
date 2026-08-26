@@ -74,7 +74,7 @@ export function SiteHeader() {
             <img
               src={logoAsset.url}
               alt="Avila's El Ranchito"
-              className="h-10 w-auto md:h-12"
+              className="h-12 w-auto md:h-14"
             />
           </a>
           <nav aria-label="Main">
