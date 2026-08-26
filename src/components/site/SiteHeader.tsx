@@ -69,14 +69,13 @@ export function SiteHeader() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-4 lg:flex-row lg:justify-between">
           <a
             href="#top"
-            className="group shrink-0 text-center transition-transform duration-500 hover:scale-105"
+            className="group shrink-0 transition-transform duration-500 hover:scale-105"
           >
-            <span className="font-wordmark block text-3xl font-normal uppercase leading-none tracking-[0.15em] text-ink-foreground md:text-4xl">
-              Avila&apos;s
-            </span>
-            <span className="font-wordmark block text-sm font-normal uppercase tracking-[0.35em] text-ink-foreground/90 md:text-base">
-              El Ranchito
-            </span>
+            <img
+              src={logoAsset.url}
+              alt="Avila's El Ranchito"
+              className="h-10 w-auto md:h-12"
+            />
           </a>
           <nav aria-label="Main">
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-sans text-sm font-semibold uppercase tracking-widest text-ink-foreground/85">
