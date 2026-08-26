@@ -1,4 +1,4 @@
-import { site, hours } from "@/lib/site-data";
+import { site, hours } from "../../lib/site-data";
 
 export function SiteFooter() {
   return (

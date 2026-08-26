@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AccessibilityWidget } from "../components/site/AccessibilityWidget";
 import { TooltipProvider } from "../components/ui/tooltip";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -129,6 +130,7 @@ function RootComponent() {
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
         <AccessibilityWidget />
+        <Toaster />
       </QueryClientProvider>
     </TooltipProvider>
   );
