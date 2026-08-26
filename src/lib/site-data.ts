@@ -512,23 +512,122 @@ export const menus: Menu[] = [
   {
     id: "happy-hour",
     label: "Happy Hour",
-    blurb: "Join us for Happy Hour specials on drinks and appetizers.",
-    groups: [
+    blurb: "Cantina only, dine-in only. Monday–Friday, 3 PM – 7 PM. Available with the purchase of a beverage.",
+    menus: [
       {
-        title: "Drink Specials",
-        note: "Available during Happy Hour",
-        items: [
-          { name: "House Margarita", description: "Our classic margarita on the rocks.", price: "7" },
-          { name: "Draft Beer", description: "Select domestic and imported drafts.", price: "5" },
-          { name: "Wine by the Glass", description: "Red or white selection.", price: "6" },
+        id: "happy-hour-food",
+        label: "Food",
+        blurb: "Cantina only. Available with the purchase of a beverage. Dine-in only, 3 PM – 7 PM.",
+        groups: [
+          {
+            title: "Appetizers",
+            note: "$10 Menu unless priced",
+            items: [
+              {
+                name: "2 Crispy Tacos",
+                description:
+                  "Your choice of shredded beef, chicken or potato tacos. For carnitas, grilled chicken or steak add $4.",
+                price: "10",
+              },
+              {
+                name: "2 Mini Burritos",
+                description:
+                  "Your choice of shredded beef and beans, chile verde and beans or chicken and rice burrito.",
+                price: "10",
+              },
+              {
+                name: "2 Flautas",
+                description: "Shredded chicken or beef served with guacamole.",
+                price: "10",
+              },
+              {
+                name: "Nachos",
+                description:
+                  "Refried beans, salsa Ranchera, melted cheese, guacamole and sour cream. Add shredded chicken or beef $2.",
+                price: "12.50",
+              },
+              {
+                name: "Chicken Wings",
+                description: "Choose BBQ or spicy sauce, served with assorted vegetables and ranch dressing.",
+                price: "15",
+              },
+              {
+                name: "Avila's Appetizer",
+                description:
+                  "A combination of nachos, small crispy tacos and chingolingas bites, served with guacamole and sour cream.",
+                price: "19",
+              },
+            ],
+          },
+          {
+            title: "Taco Tuesday",
+            items: [
+              {
+                name: "Soft Tacos",
+                description:
+                  "Your choice of shredded beef, chicken or potato. For carnitas, grilled chicken or steak add $1.50.",
+                price: "4.75",
+              },
+            ],
+          },
         ],
       },
       {
-        title: "Appetizer Specials",
-        items: [
-          { name: "Quesadilla", description: "Cheese quesadilla with guacamole and sour cream.", price: "7" },
-          { name: "Nachos", description: "Tortilla chips with beans, cheese and jalapeños.", price: "8" },
-          { name: "Flautas", description: "Crispy rolled tacos served with guacamole.", price: "8" },
+        id: "happy-hour-drinks",
+        label: "Drinks",
+        blurb: "Monday – Friday, 3 PM – 7 PM. Cantina only.",
+        groups: [
+          {
+            title: "Specialty Drinks",
+            note: "$2 off during Happy Hour",
+            items: [
+              {
+                name: "Skinny Coconut Margarita",
+                description: "1800 Coconut tequila, pineapple juice and our signature skinny mix.",
+                price: "15",
+              },
+              {
+                name: "Bacardi Mojito",
+                description:
+                  "Bacardi silver rum, fresh mint leaves, fresh lime juice, simple syrup and soda water. Classic recipe, classic taste!",
+                price: "15",
+              },
+              {
+                name: "Avila's Guava Margarita",
+                description:
+                  "Our signature skinny margarita made with Cazadores Blanco tequila, fresh lime juice, agave nectar and 100% guava nectar.",
+                price: "15",
+              },
+              {
+                name: "Cazadores Skinny Margarita",
+                description: "Cazadores Blanco tequila, fresh lime juice and agave nectar.",
+                price: "15",
+              },
+              {
+                name: "Skinny Cucumber Vodka Margarita",
+                description: "Cucumber vodka, our signature skinny mix and fresh lime juice.",
+                price: "15",
+              },
+            ],
+          },
+          {
+            title: "Draft Beer",
+            items: [
+              { name: "Avila's House Amber", price: "6" },
+              { name: "Modelo Especial, Pacifico & Dos XX Amber", price: "6.75" },
+            ],
+          },
+          {
+            title: "Margaritas",
+            items: [
+              { name: "House Margarita", price: "9" },
+              { name: "House Fruit Margarita", price: "10" },
+            ],
+          },
+          {
+            title: "Well Drinks",
+            items: [{ name: "Well Drinks", description: "Excludes martinis.", price: "8.50" }],
+          },
         ],
       },
     ],
