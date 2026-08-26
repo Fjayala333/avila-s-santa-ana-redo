@@ -306,6 +306,7 @@ export const menus: Menu[] = [
       },
     ],
   },
+},
 ];
 
 
