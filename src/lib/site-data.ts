@@ -105,6 +105,85 @@ export type Menu = {
 
 export const menus: Menu[] = [
   {
+    id: "all-day-menu",
+    label: "All Day Menu",
+    blurb: "\n",
+    menus: [
+      {
+        id: "all-day-food",
+        label: "All Day Food",
+        blurb: "Appetizers, soups, salads, tacos, enchiladas and family favorites served all day.",
+        groups: [
+          {
+            title: "Appetizers",
+            note: "Perfect for sharing",
+            items: [
+              { name: "Nachos", description: "Tortilla chips topped with beans, cheese, jalapeños, guacamole and sour cream.", price: "12" },
+              { name: "Quesadilla", description: "Flour tortilla filled with melted cheese, served with guacamole and sour cream.", price: "11" },
+              { name: "Guacamole & Chips", description: "Freshly made guacamole served with crispy tortilla chips.", price: "10" },
+            ],
+          },
+          {
+            title: "Soups & Salads",
+            items: [
+              { name: "Tortilla Soup", description: "Rich chicken broth with crispy tortilla strips, avocado and cheese.", price: "9" },
+              { name: "Chicken Salad", description: "Mixed greens with grilled chicken, avocado, tomatoes and ranch dressing.", price: "14" },
+            ],
+          },
+          {
+            title: "Tacos",
+            note: "Served with rice and beans",
+            items: [
+              { name: "Carne Asada Tacos", description: "Grilled steak tacos with cilantro, onions and salsa.", price: "16" },
+              { name: "Fish Tacos", description: "Baja-style fish tacos with cabbage slaw and chipotle crema.", price: "15" },
+              { name: "Carnitas Tacos", description: "Slow-cooked pork with pickled onions and salsa verde.", price: "15" },
+            ],
+          },
+          {
+            title: "House Favorites",
+            items: [
+              { name: "Avila's Combo", description: "A house favorite with an enchilada, taco, tamale and chile relleno.", price: "22" },
+              { name: "Chile Verde", description: "Tender pork simmered in a tangy green tomatillo sauce.", price: "18" },
+              { name: "Fajitas", description: "Sizzling steak or chicken with peppers, onions and warm tortillas.", price: "21" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "all-day-drinks",
+        label: "All Day Drinks",
+        blurb: "Margaritas, cocktails, beer and non-alcoholic favorites.",
+        groups: [
+          {
+            title: "Margaritas",
+            items: [
+              { name: "House Margarita", description: "Our classic margarita on the rocks or frozen.", price: "10" },
+              { name: "Cadillac Margarita", description: "Premium tequila with Grand Marnier and fresh lime.", price: "13" },
+              { name: "Mango Margarita", description: "Blended with fresh mango and lime.", price: "12" },
+            ],
+          },
+          {
+            title: "Cocktails & Beer",
+            items: [
+              { name: "Paloma", description: "Tequila, grapefruit soda and fresh lime.", price: "11" },
+              { name: "Michelada", description: "Beer cocktail with lime juice, spices and a salted rim.", price: "9" },
+              { name: "Domestic Beer", description: "Ask your server for today's selection.", price: "7" },
+              { name: "Imported Beer", description: "Mexican imports available.", price: "8" },
+            ],
+          },
+          {
+            title: "Non-Alcoholic",
+            items: [
+              { name: "Horchata", description: "Cinnamon rice milk.", price: "5" },
+              { name: "Jamaica", description: "Hibiscus iced tea.", price: "5" },
+              { name: "Soft Drinks", description: "Coke, Diet Coke, Sprite and more.", price: "4" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "brunch-menu",
     label: "Brunch Menu",
     blurb: "\n",
@@ -298,6 +377,30 @@ export const menus: Menu[] = [
               },
             ],
           },
+        ],
+      },
+    ],
+  },
+  {
+    id: "happy-hour",
+    label: "Happy Hour",
+    blurb: "Join us for Happy Hour specials on drinks and appetizers.",
+    groups: [
+      {
+        title: "Drink Specials",
+        note: "Available during Happy Hour",
+        items: [
+          { name: "House Margarita", description: "Our classic margarita on the rocks.", price: "7" },
+          { name: "Draft Beer", description: "Select domestic and imported drafts.", price: "5" },
+          { name: "Wine by the Glass", description: "Red or white selection.", price: "6" },
+        ],
+      },
+      {
+        title: "Appetizer Specials",
+        items: [
+          { name: "Quesadilla", description: "Cheese quesadilla with guacamole and sour cream.", price: "7" },
+          { name: "Nachos", description: "Tortilla chips with beans, cheese and jalapeños.", price: "8" },
+          { name: "Flautas", description: "Crispy rolled tacos served with guacamole.", price: "8" },
         ],
       },
     ],
