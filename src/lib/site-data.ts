@@ -54,7 +54,7 @@ export const highlightCards = [
     alt: "Historic portrait of the Avila family founders",
     text: "It started in a kitchen in 1966, with recipes Mama Avila brought from Guanajuato, Mexico.",
     cta: "Read Our Story",
-    href: "#our-story",
+    href: "#our-stories",
   },
 ];
 
@@ -114,201 +114,201 @@ export const menus: Menu[] = [
         label: "Brunch Food",
         blurb: "Served weekends. All Mexican dishes come with your choice of rice and beans or fresh fruit.",
         groups: [
-      {
-        title: "Mexican Dishes",
-        note: "All Mexican dishes are served with your choice of rice and beans or fresh fruit.",
-        items: [
           {
-            name: "Quesadilla Egg-celente",
-            description:
-              "A giant flour tortilla stuffed with scrambled eggs, cheese, avocado, Ortega chiles and tomatoes. Garnished with guacamole and sour cream.",
-            price: "20",
+            title: "Mexican Dishes",
+            note: "All Mexican dishes are served with your choice of rice and beans or fresh fruit.",
+            items: [
+              {
+                name: "Quesadilla Egg-celente",
+                description:
+                  "A giant flour tortilla stuffed with scrambled eggs, cheese, avocado, Ortega chiles and tomatoes. Garnished with guacamole and sour cream.",
+                price: "20",
+              },
+              {
+                name: "Breakfast Burrito",
+                description:
+                  "Stuffed with chicken or chorizo, salsa fresca, eggs and rice. Garnished with guacamole and sour cream.",
+                price: "20",
+              },
+              {
+                name: "Huevos con Chorizo",
+                description: "Farm fresh eggs scrambled with authentic mildly spiced Mexican sausage.",
+                price: "20",
+              },
+              {
+                name: "Machaca con Huevos",
+                description:
+                  "Eggs scrambled with shredded chicken or beef, fresh bell peppers, onions and tomatoes. Served with warm tortillas.",
+                price: "20",
+              },
+              {
+                name: "Huevos Rancheros",
+                description: "Two eggs over easy, smothered in salsa ranchera and melted cheese.",
+                price: "19",
+              },
+              {
+                name: "Breakfast Tacos",
+                description:
+                  "Crispy or soft tacos filled with your choice of chorizo, shredded beef or shredded chicken, cooked with eggs and pico de gallo. Topped with cheese.",
+                price: "20",
+              },
+              {
+                name: "Mexican Chilaquiles",
+                description:
+                  "Corn tortilla strips sautéed in a crisp toasted red chile and garlic sauce. Served with two fresh eggs any style.",
+                price: "19",
+              },
+              {
+                name: "Omelet Mexican Style",
+                description:
+                  "Farm fresh eggs scrambled with bell peppers, onions and tomatoes. Covered in salsa ranchera and melted cheese.",
+                price: "19",
+              },
+              {
+                name: "Steak & Eggs",
+                description:
+                  "Delicious grilled carne asada served with two farm fresh eggs cooked any style. Served with warm tortillas.",
+                price: "24",
+              },
+              {
+                name: "Menudo",
+                description: "Served with all of the trimmings.",
+                price: "17.5",
+              },
+            ],
           },
           {
-            name: "Breakfast Burrito",
-            description:
-              "Stuffed with chicken or chorizo, salsa fresca, eggs and rice. Garnished with guacamole and sour cream.",
-            price: "20",
-          },
-          {
-            name: "Huevos con Chorizo",
-            description: "Farm fresh eggs scrambled with authentic mildly spiced Mexican sausage.",
-            price: "20",
-          },
-          {
-            name: "Machaca con Huevos",
-            description:
-              "Eggs scrambled with shredded chicken or beef, fresh bell peppers, onions and tomatoes. Served with warm tortillas.",
-            price: "20",
-          },
-          {
-            name: "Huevos Rancheros",
-            description: "Two eggs over easy, smothered in salsa ranchera and melted cheese.",
-            price: "19",
-          },
-          {
-            name: "Breakfast Tacos",
-            description:
-              "Crispy or soft tacos filled with your choice of chorizo, shredded beef or shredded chicken, cooked with eggs and pico de gallo. Topped with cheese.",
-            price: "20",
-          },
-          {
-            name: "Mexican Chilaquiles",
-            description:
-              "Corn tortilla strips sautéed in a crisp toasted red chile and garlic sauce. Served with two fresh eggs any style.",
-            price: "19",
-          },
-          {
-            name: "Omelet Mexican Style",
-            description:
-              "Farm fresh eggs scrambled with bell peppers, onions and tomatoes. Covered in salsa ranchera and melted cheese.",
-            price: "19",
-          },
-          {
-            name: "Steak & Eggs",
-            description:
-              "Delicious grilled carne asada served with two farm fresh eggs cooked any style. Served with warm tortillas.",
-            price: "24",
-          },
-          {
-            name: "Menudo",
-            description: "Served with all of the trimmings.",
-            price: "17.5",
+            title: "Kids Breakfast",
+            note: "Served with your choice of rice and beans, French fries or fresh fruit. 11.5",
+            items: [
+              {
+                name: "Mini Egg Quesadilla",
+                description: "Kids quesadilla filled with scrambled eggs and cheese.",
+                price: "11.5",
+              },
+              {
+                name: "Mini Breakfast Burrito",
+                description: "Kids mini burrito filled with eggs and cheese.",
+                price: "11.5",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Kids Breakfast",
-        note: "Served with your choice of rice and beans, French fries or fresh fruit. 11.5",
-        items: [
+        id: "brunch-drinks",
+        label: "Brunch Drinks",
+        blurb: "Mimosas, micheladas and the margaritas our family is known for.",
+        groups: [
           {
-            name: "Mini Egg Quesadilla",
-            description: "Kids quesadilla filled with scrambled eggs and cheese.",
-            price: "11.5",
+            title: "Breakfast Drinks",
+            items: [
+              {
+                name: "Champagne or Mimosa",
+                description: "Add pomegranate or guava for 50¢.",
+                price: "7",
+              },
+              {
+                name: "Absolut Peppar Bloody Mary",
+                description: "Our own delicious house recipe!",
+                price: "11.5",
+              },
+              {
+                name: "Mexican Michelada",
+                description:
+                  "A Tajín rimmed pint glass, half filled with fresh lime juice, michelada mix and ice. Served with a Modelo Especial draft.",
+                price: "9",
+              },
+            ],
           },
           {
-            name: "Mini Breakfast Burrito",
-            description: "Kids mini burrito filled with eggs and cheese.",
-            price: "11.5",
+            title: "Skinny Cocktails",
+            items: [
+              {
+                name: "Cazadores Skinny Margarita",
+                description:
+                  "Made with Cazadores Blanco, one of the Avila family's favorite tequilas, fresh lime juice and agave nectar.",
+                price: "15",
+              },
+              {
+                name: "Organic Margarita",
+                description:
+                  "Señora Leona organic blanco tequila, organic agave nectar, fresh squeezed lime juice and soda water.",
+                price: "16",
+              },
+              {
+                name: "Skinny Cucumber Vodka Margarita",
+                description:
+                  "Cucumber vodka, our signature skinny margarita mix made with fresh lime juice, cucumber slices and agave nectar.",
+                price: "15",
+              },
+              {
+                name: "Avila's Guava Margarita",
+                description:
+                  "Our signature skinny margarita made with Cazadores Blanco tequila, lime juice, agave nectar and 100% guava nectar.",
+                price: "15",
+              },
+              {
+                name: "Skinny Coconut Margarita",
+                description: "1800 Coconut tequila, pineapple juice and our signature skinny margarita mix.",
+                price: "15",
+              },
+            ],
+          },
+          {
+            title: "Popular Cocktails",
+            items: [
+              {
+                name: "Patrón Chambord Margarita",
+                description:
+                  "Our famous skinny margarita made with Patrón Silver, topped with a splash of Chambord black raspberry liqueur.",
+                price: "16",
+              },
+              {
+                name: "Bacardi Mojito",
+                description:
+                  "Bacardi Silver rum, fresh mint leaves, fresh lime juice, simple syrup and soda water. Classic recipe, classic taste.",
+                price: "15",
+              },
+              {
+                name: "Cazadores Pink Cadillac Margarita",
+                description:
+                  "Cazadores Silver tequila, fresh lime juice, agave nectar and a splash of cranberry juice. Shaken with fresh lemons, limes and oranges. Prepared \"Cadillac\" style.",
+                price: "15.5",
+              },
+              {
+                name: "Sangria",
+                description: "A classic red sangria made with merlot, brandy and a mixture of juices and fruit.",
+                price: "14.5",
+              },
+              {
+                name: "Victor's Old Fashioned",
+                description: "Maker's Mark bourbon, old fashioned syrup and bitters.",
+                price: "15",
+              },
+              {
+                name: "Coronarita",
+                description: "Our famous house margarita topped with a Coronita. Yum!",
+                price: "19",
+              },
+              {
+                name: "Mexican Mule",
+                description: "Made with Cazadores Blanco tequila, fresh lime juice and ginger beer.",
+                price: "15",
+              },
+              {
+                name: "California Cadillac",
+                description:
+                  "Our signature skinny margarita made with Cazadores Blanco tequila, fresh lime juice and agave nectar, prepared \"Cadillac\" style.",
+                price: "15.5",
+              },
+            ],
           },
         ],
       },
     ],
   },
-  {
-    id: "brunch-drinks",
-    label: "Brunch Drinks",
-    blurb: "Mimosas, micheladas and the margaritas our family is known for.",
-    groups: [
-      {
-        title: "Breakfast Drinks",
-        items: [
-          {
-            name: "Champagne or Mimosa",
-            description: "Add pomegranate or guava for 50¢.",
-            price: "7",
-          },
-          {
-            name: "Absolut Peppar Bloody Mary",
-            description: "Our own delicious house recipe!",
-            price: "11.5",
-          },
-          {
-            name: "Mexican Michelada",
-            description:
-              "A Tajín rimmed pint glass, half filled with fresh lime juice, michelada mix and ice. Served with a Modelo Especial draft.",
-            price: "9",
-          },
-        ],
-      },
-      {
-        title: "Skinny Cocktails",
-        items: [
-          {
-            name: "Cazadores Skinny Margarita",
-            description:
-              "Made with Cazadores Blanco, one of the Avila family's favorite tequilas, fresh lime juice and agave nectar.",
-            price: "15",
-          },
-          {
-            name: "Organic Margarita",
-            description:
-              "Señora Leona organic blanco tequila, organic agave nectar, fresh squeezed lime juice and soda water.",
-            price: "16",
-          },
-          {
-            name: "Skinny Cucumber Vodka Margarita",
-            description:
-              "Cucumber vodka, our signature skinny margarita mix made with fresh lime juice, cucumber slices and agave nectar.",
-            price: "15",
-          },
-          {
-            name: "Avila's Guava Margarita",
-            description:
-              "Our signature skinny margarita made with Cazadores Blanco tequila, lime juice, agave nectar and 100% guava nectar.",
-            price: "15",
-          },
-          {
-            name: "Skinny Coconut Margarita",
-            description: "1800 Coconut tequila, pineapple juice and our signature skinny margarita mix.",
-            price: "15",
-          },
-        ],
-      },
-      {
-        title: "Popular Cocktails",
-        items: [
-          {
-            name: "Patrón Chambord Margarita",
-            description:
-              "Our famous skinny margarita made with Patrón Silver, topped with a splash of Chambord black raspberry liqueur.",
-            price: "16",
-          },
-          {
-            name: "Bacardi Mojito",
-            description:
-              "Bacardi Silver rum, fresh mint leaves, fresh lime juice, simple syrup and soda water. Classic recipe, classic taste.",
-            price: "15",
-          },
-          {
-            name: "Cazadores Pink Cadillac Margarita",
-            description:
-              "Cazadores Silver tequila, fresh lime juice, agave nectar and a splash of cranberry juice. Shaken with fresh lemons, limes and oranges. Prepared \"Cadillac\" style.",
-            price: "15.5",
-          },
-          {
-            name: "Sangria",
-            description: "A classic red sangria made with merlot, brandy and a mixture of juices and fruit.",
-            price: "14.5",
-          },
-          {
-            name: "Victor's Old Fashioned",
-            description: "Maker's Mark bourbon, old fashioned syrup and bitters.",
-            price: "15",
-          },
-          {
-            name: "Coronarita",
-            description: "Our famous house margarita topped with a Coronita. Yum!",
-            price: "19",
-          },
-          {
-            name: "Mexican Mule",
-            description: "Made with Cazadores Blanco tequila, fresh lime juice and ginger beer.",
-            price: "15",
-          },
-          {
-            name: "California Cadillac",
-            description:
-              "Our signature skinny margarita made with Cazadores Blanco tequila, fresh lime juice and agave nectar, prepared \"Cadillac\" style.",
-            price: "15.5",
-          },
-        ],
-      },
-    ],
-  },
-},
 ];
-
 
 export const hours = [
   "Sunday 11 AM–9 PM",
