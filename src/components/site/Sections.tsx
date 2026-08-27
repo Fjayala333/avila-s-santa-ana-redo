@@ -543,6 +543,7 @@ function FiestaChatInquiry() {
               <input
                 type="time"
                 required
+                placeholder="Time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
                 className="w-24 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
