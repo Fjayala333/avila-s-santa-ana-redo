@@ -16,7 +16,7 @@ const nav = [
   { label: "Our Story", href: "#our-story" },
   { label: "Menus", href: "#menus" },
   { label: "Party Trays", href: "#party-trays" },
-  { label: "Private Fiesta", href: "#private-fiesta" },
+  { label: "FIESTAS & CELEBRATIONS", href: "#private-fiesta" },
   { label: "Contact", href: "#contact" },
 ];
 
