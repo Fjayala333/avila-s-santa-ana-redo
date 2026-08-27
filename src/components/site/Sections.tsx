@@ -17,6 +17,7 @@ import {
   highlightCards,
   diningSlides,
   partyTrays,
+  cateringGallery,
   experience,
   menus,
   cateringMenu,
@@ -375,6 +376,19 @@ export function PartyTrays() {
             </div>
           </div>
         </Reveal>
+
+        <div className="mx-auto mt-6 grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-4">
+          {cateringGallery.map((item, i) => (
+            <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host lift rounded-sm">
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="img-zoom aspect-[4/3] w-full rounded-sm object-cover"
+              />
+            </Reveal>
+          ))}
+        </div>
 
         <Reveal delay={180}>
           <Tabs defaultValue={cateringMenu[0]!.id} className="mt-10">

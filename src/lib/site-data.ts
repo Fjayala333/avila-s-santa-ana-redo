@@ -1,4 +1,8 @@
 import logoHd from "../assets/avilas-logo-transparent.png.asset.json";
+import tray1 from "../assets/tray-catering1.jpg.asset.json";
+import tray2 from "../assets/tray-images.jpg.asset.json";
+import tray3 from "../assets/tray-images-2.jpg.asset.json";
+import tray4 from "../assets/tray-images-3.jpg.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",
@@ -70,6 +74,13 @@ export const partyTrays = [
   { src: u("8bcb0208-e35e-42d2-9ee9-07c33b2d4eb1"), alt: "Party tray with tacos, flautas, guacamole and tortillas on a colorful serape" },
   { src: u("3c54d852-2525-4267-bd68-7565d67d8200"), alt: "Party tray featuring tacos, flautas, guacamole and margaritas" },
   { src: u("aece31bc-0746-4502-933d-f16188276018"), alt: "Catering spread with enchiladas, salads, chips and party platters" },
+];
+
+export const cateringGallery = [
+  { src: tray1.url, alt: "Catering enchilada tray with a fresh chicken taco salad" },
+  { src: tray2.url, alt: "Party platter with burritos, flautas and tacos" },
+  { src: tray3.url, alt: "Full tray of cheese-topped enchiladas in red sauce" },
+  { src: tray4.url, alt: "Catering spread with fajitas, salad, enchiladas and flautas" },
 ];
 
 export const experience = [
