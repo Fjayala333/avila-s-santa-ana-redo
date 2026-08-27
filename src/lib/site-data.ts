@@ -780,6 +780,136 @@ export const cateringMenu: Menu[] = [
   },
 ];
 
+export const banquetMenus: Menu[] = [
+  {
+    id: "limited-menus",
+    label: "Limited Menus",
+    blurb: "For parties of 35 or less. Each guest chooses one dish. Sales tax and a 20% service charge will be added.",
+    groups: [
+      {
+        title: "Menu #1 — $29 per person",
+        items: [
+          {
+            name: "Quesadilla Avila",
+            description:
+              "Large flour tortilla grilled with Monterey jack and cheddar cheese. Filled with your choice of shredded beef, ground beef or chicken. Garnished with sour cream and guacamole.",
+          },
+          {
+            name: "Grilled Chicken Salad",
+            description: "Spicy Cajun flavored chicken over green salad. Sliced avocados, tomatoes and shredded cheese.",
+          },
+          {
+            name: "Azteca Treasure Burrito",
+            description:
+              "Either chile verde, shredded beef or chicken, wrapped in a big flour tortilla with beans, smothered with salsa ranchera and melted cheese. Topped with guacamole.",
+          },
+          {
+            name: "Mexican Combination Plate",
+            description: "A melt-in-your-mouth cheese enchilada with a crispy beef taco. Served with rice and beans.",
+          },
+          {
+            name: "Chingolingas",
+            description:
+              "Crisp flour tortilla pastry stuffed with chicken. Cut into finger-sized pieces and served with sour cream and guacamole. Choice of rice or beans.",
+          },
+        ],
+      },
+      {
+        title: "Menu #2 — $32 per person",
+        note: "All dishes include salad.",
+        items: [
+          {
+            name: "Sizzling Fajitas",
+            description:
+              "Marinated strips of beef or chicken sizzled with onion, bell pepper and tomatoes. Served with rice, beans and fresh hot tortillas.",
+          },
+          {
+            name: "Carnitas",
+            description:
+              "Delicious chunks of lean pork marinated in lemon and garlic, then cooked until juicy inside, slightly crispy outside. Served with rice, beans and fresh hot tortillas.",
+          },
+          {
+            name: "Enchiladas Tomatillas",
+            description:
+              "Two chicken enchiladas covered with salsa tomatillo. Topped with melted cheese and sour cream. Served with rice and beans.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "buffets",
+    label: "Mexican Buffets",
+    blurb: "For parties of 35 or more. Unlimited soft drinks included with all buffets except the Cocktail Party.",
+    groups: [
+      {
+        title: "Buffet Packages",
+        items: [
+          {
+            name: "Macarena Combo",
+            price: "31",
+            description: "Cheese enchiladas, chingolingas, fresh green salad, rice & beans, chips & salsa, mini burritos. Per person.",
+          },
+          {
+            name: "Sizzling Fajitas",
+            price: "32",
+            description:
+              "Chicken or beef fajitas, cheese enchiladas, fresh green salad, variety of fresh salsas, rice & beans, fresh tortillas, chips & salsa. Both chicken & steak fajitas, add $2. Per person.",
+          },
+          {
+            name: "Mexico City",
+            price: "34",
+            description:
+              "Authentic carnitas, chicken or beef fajitas, fresh green salad, variety of fresh salsas, rice & beans, fresh tortillas, chips & salsa, cheese enchiladas. Both chicken & steak fajitas, add $2. Per person.",
+          },
+          {
+            name: "Lunch Buffet",
+            price: "28",
+            description: "Monday–Friday, 11 AM–2 PM. Cheese enchiladas, chingolingas, fresh green salad, rice & beans, chips & salsa. Per person.",
+          },
+          {
+            name: "Cocktail Party",
+            price: "26",
+            description:
+              "25 guests or more, Monday–Friday 3–6 PM. Soft drinks not included. Chingolingas, mini burritos, nacho ranchitos, fresh vegetables & dip, chips & salsa. Per person.",
+          },
+        ],
+      },
+      {
+        title: "Sweet Endings & Add-Ons",
+        items: [
+          { name: "Assortment of Poco Dulce", price: "6", description: "Empanadillas, churros and buñuelitos. Per person." },
+          { name: "Guacamole for the Table", price: "16", description: "Added to each table." },
+        ],
+      },
+    ],
+  },
+];
+
+export const beverageOptions = [
+  {
+    name: "Full Bar",
+    description: "Open bar with the total bill included on the host check.",
+  },
+  {
+    name: "Host Purchased Drink Tickets",
+    description: 'Drink tickets cover "house" margaritas, wine, well drinks and any beer.',
+  },
+  {
+    name: "No Host",
+    description: "Our cocktail server collects from each guest as served.",
+  },
+];
+
+export const banquetPolicies = [
+  "Groups under 35: order from our pre-selected limited menus.",
+  "Groups of 35 or more: choose from our buffet menus. A set-up fee of $100–$300+ applies, depending on group size.",
+  "Decorations are welcome, excluding confetti. Please discuss special table arrangements with the restaurant manager before your event.",
+  "A 20% service charge and sales tax will be added to your bill.",
+  "A deposit is required to reserve your banquet date — ask the manager for details.",
+  "Linens are available for $22 per guest table. Some restrictions apply.",
+];
+
 export const hours = [
   "Sunday 11 AM–9 PM",
   "Monday 11 AM–9 PM",

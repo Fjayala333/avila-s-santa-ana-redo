@@ -24,7 +24,7 @@ import {
   type MenuGroup,
 } from "../../lib/site-data";
 
-function SectionHeading({
+export function SectionHeading({
   kicker,
   title,
   children,
@@ -258,7 +258,7 @@ export function OurStory() {
   );
 }
 
-function MenuGroups({ groups }: { groups: MenuGroup[] }) {
+export function MenuGroups({ groups }: { groups: MenuGroup[] }) {
   return (
     <div className="mx-auto mt-8 max-w-3xl space-y-10">
       {groups.map((group) => (
@@ -488,7 +488,7 @@ function FiestaBubble({ children }: { children: React.ReactNode }) {
   );
 }
 
-function FiestaChatInquiry() {
+export function FiestaChatInquiry() {
   const [eventType, setEventType] = useState<string | null>(null);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");

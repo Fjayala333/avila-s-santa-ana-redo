@@ -12,12 +12,12 @@ import { site, orderingPlatforms } from "../../lib/site-data";
 import { cn } from "../../lib/utils";
 
 const nav = [
-  { label: "Home", href: "#top" },
-  { label: "Our Story", href: "#our-story" },
-  { label: "Menus", href: "#menus" },
-  { label: "Party Trays", href: "#party-trays" },
-  { label: "FIESTAS & CELEBRATIONS", href: "#private-fiesta" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Our Story", href: "/#our-story" },
+  { label: "Menus", href: "/#menus" },
+  { label: "Party Trays", href: "/#party-trays" },
+  { label: "FIESTAS & CELEBRATIONS", href: "/fiestas-celebrations" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function SiteHeader() {
