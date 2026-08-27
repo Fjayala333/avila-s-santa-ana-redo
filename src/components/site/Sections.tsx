@@ -19,6 +19,7 @@ import {
   partyTrays,
   experience,
   menus,
+  cateringMenu,
   type MenuGroup,
 } from "../../lib/site-data";
 
@@ -350,25 +351,55 @@ export function Menus() {
 }
 
 export function PartyTrays() {
+  const bannerSlide = partyTrays[1]!;
+
   return (
     <section id="party-trays" className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
         <SectionHeading kicker="To Go" title="Party Trays & Catering">
-          Perfect for your next celebration. Our party trays feature authentic Mexican favorites that bring the
-          El Ranchito experience to your special events.
+          Perfect for your next celebration. Order by the tray, or start with a ready-made package.
         </SectionHeading>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {partyTrays.map((tray, i) => (
-            <Reveal key={tray.src} delay={i * 140} className="img-zoom-host lift rounded-sm">
-              <img
-                src={tray.src}
-                alt={tray.alt}
-                loading="lazy"
-                className="img-zoom aspect-[4/3] w-full rounded-sm object-cover"
-              />
-            </Reveal>
-          ))}
-        </div>
+
+        <Reveal delay={100} className="img-zoom-host mx-auto mt-10 max-w-4xl overflow-hidden rounded-sm shadow-xl">
+          <div className="relative">
+            <img
+              src={bannerSlide.src}
+              alt={bannerSlide.alt}
+              loading="lazy"
+              className="img-zoom aspect-[21/8] w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent p-4 pt-12">
+              <p className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-ink-foreground">
+                Real trays, ready to order
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={180}>
+          <Tabs defaultValue={cateringMenu[0]!.id} className="mt-10">
+            <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
+              {cateringMenu.map((menu) => (
+                <TabsTrigger
+                  key={menu.id}
+                  value={menu.id}
+                  className="text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/15 hover:text-accent-foreground hover:shadow-sm data-[state=active]:hover:translate-y-0"
+                >
+                  {menu.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            {cateringMenu.map((menu) => (
+              <TabsContent key={menu.id} value={menu.id} className="mt-8">
+                <div className="animate-fade-up rounded-sm border border-border bg-card p-6 sm:p-8">
+                  <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
+                  {menu.groups ? <MenuGroups groups={menu.groups} /> : null}
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </Reveal>
+
         <Reveal delay={120} className="mt-10 text-center">
           <p className="font-display text-xl text-foreground">Ready to make your event unforgettable?</p>
           <a

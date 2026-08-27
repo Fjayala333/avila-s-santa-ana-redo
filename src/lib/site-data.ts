@@ -665,6 +665,109 @@ export const menus: Menu[] = [
   },
 ];
 
+export const cateringMenu: Menu[] = [
+  {
+    id: "party-packs",
+    label: "Party Packs",
+    blurb: "Two crowd-size bundles, ready to order as-is.",
+    groups: [
+      {
+        title: "Packages",
+        items: [
+          {
+            name: "Party Pack — Serves 10",
+            price: "120",
+            description:
+              "10 each of Chicken Chingolinga Bites, Small Beef Tacos, Beef Flautas and Bean & Cheese Burritos, plus 16 oz guacamole, 16 oz salsa and a bag of chips.",
+          },
+          {
+            name: "Family Pack — Serves 15",
+            price: "190",
+            description:
+              "15 each of the same favorites, plus 2 pints salsa, 2 pints guacamole, 2 quarts rice & beans and 2 bags of chips.",
+          },
+          {
+            name: "Azteca Chicken Salad",
+            price: "50",
+            description:
+              "Suggested for 10–15 as a side. Grilled chicken, black beans, corn, red & green peppers, tortilla strips and cilantro-lime dressing.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "by-the-tray",
+    label: "By the Tray",
+    blurb: "Favoritos by the tray — order exactly what the group wants.",
+    groups: [
+      {
+        title: "Favoritos by the Tray",
+        items: [
+          { name: "Small Crispy Tacos", price: "35", description: "Shredded beef or chicken, lettuce, pico de gallo and cheese. Per dozen." },
+          { name: "Small Burritos, Bean & Cheese", price: "30", description: "Per dozen." },
+          { name: "Small Burritos, Chicken & Rice", price: "32", description: "Per dozen." },
+          { name: "Chingolinga Bites", price: "30", description: "Crispy flour tortilla stuffed with chicken. 15 bites." },
+          { name: "Flautas or Taquitos", price: "30", description: "Choice of shredded beef or chicken. 24 pieces." },
+          { name: "Enchiladas", price: "50", description: "Cheese, beef or chicken, with salsa roja, tomatillo or ranchera. Per dozen." },
+          { name: "Cheese Quesadillas", price: "30", description: "Per dozen." },
+          { name: "Churros", price: "30", description: "Per dozen." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "fajita-bar",
+    label: "Fajita Bar",
+    blurb: "Order by the tray — half tray, suggested for 10.",
+    groups: [
+      {
+        title: "Fajita & Carnitas Bar",
+        items: [
+          { name: "Chicken Fajitas", price: "55" },
+          { name: "Steak Fajitas", price: "60" },
+          { name: "Carnitas", price: "65" },
+          {
+            name: "Add to Fajitas",
+            price: "30",
+            description: "Two dozen tortillas, a pint of guacamole, a pint of cheese & pico de gallo.",
+          },
+          {
+            name: "Add to Carnitas",
+            price: "30",
+            description: "Two dozen tortillas, a pint of guacamole, a pint of salsa negra, cilantro & onion.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "extras",
+    label: "Extras",
+    blurb: "Round out the order.",
+    groups: [
+      {
+        title: "Extras & Add-Ons",
+        items: [
+          { name: "Bag of Chips", price: "8" },
+          { name: "Guacamole, 8 oz", price: "12" },
+          { name: "Guacamole, 16 oz", price: "20" },
+          { name: "Our Famous Salsa, 8 oz", price: "6" },
+          { name: "Our Famous Salsa, 16 oz", price: "10" },
+          { name: "Pico de Gallo, 8 oz", price: "6" },
+          { name: "Pico de Gallo, 16 oz", price: "10" },
+          { name: "Mexican Rice, 16 oz", price: "8", description: "Serves 2–4." },
+          { name: "Mexican Rice, 32 oz", price: "16", description: "Serves 5–8." },
+          { name: "Beans, 16 oz", price: "8", description: "Regular, black or whole pinto." },
+          { name: "Beans, 32 oz", price: "16", description: "Regular, black or whole pinto." },
+          { name: "Plates, Forks & Napkins", price: "0.50 / person" },
+          { name: "Disposable Serving Utensils", price: "1.00 each" },
+        ],
+      },
+    ],
+  },
+];
+
 export const hours = [
   "Sunday 11 AM–9 PM",
   "Monday 11 AM–9 PM",
