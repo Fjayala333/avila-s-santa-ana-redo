@@ -538,44 +538,6 @@ export const menus: Menu[] = [
           },
         ],
       },
-      {
-        id: "lunch-drinks",
-        label: "Lunch Drinks",
-        blurb: "Local favorites, skinny cocktails and house classics.",
-        groups: [
-          {
-            title: "Local Favorites",
-            items: [
-              { name: "Cazadores Skinny Margarita", description: "Made with Cazadores Blanco, one of the Avila Family's favorite tequilas. Fresh lime juice and agave nectar.", price: "15" },
-              { name: "Tamarindo Chile Margarita", description: "A skinny style margarita made with Cazadores Blanco Tequila and tamarindo purée with serrano chiles. Tastes like a Mexican candy.", price: "15" },
-              { name: "Blood Orange Margarita", description: "Made with Cazadores Tequila Blanco and blood orange margarita mix.", price: "15" },
-            ],
-          },
-          {
-            title: "Skinny Cocktails",
-            items: [
-              { name: "Skinny Jalapeño Margarita", description: "Tanteo Jalapeño Tequila, our signature skinny margarita mix, made with fresh lime juice, fresh jalapeño and agave nectar. Habanero tequila upon request.", price: "15" },
-              { name: "Skinny Cucumber Vodka Margarita", description: "Cucumber vodka, our signature skinny margarita mix, made with fresh lime juice, cucumber slices and agave nectar.", price: "15" },
-              { name: "Skinny Coconut Margarita", description: "1800 Coconut Tequila, pineapple juice and our signature skinny margarita mix.", price: "15" },
-              { name: "Organic Margarita", description: "Señora Leona organic Blanco Tequila, organic agave nectar, fresh squeezed lime juice and soda water.", price: "16" },
-              { name: "Avila's Guava Margarita", description: "Our signature skinny margarita made with Cazadores Blanco Tequila, lime juice, agave nectar and 100% guava nectar.", price: "15" },
-            ],
-          },
-          {
-            title: "Popular Cocktails",
-            items: [
-              { name: "Patrón Chambord Margarita", description: "Our famous skinny margarita made with Patrón Silver. Topped with a splash of Chambord Black Raspberry Liqueur.", price: "16" },
-              { name: "Cazadores Pink Cadillac Margarita", description: "Cazadores Silver Tequila, fresh lime juice, agave nectar, and a splash of cranberry juice. Shaken with fresh lemons, limes and oranges. Prepared \"Cadillac\" style.", price: "15.5" },
-              { name: "Victor's Old Fashioned", description: "Maker's Mark Bourbon, old fashioned syrup and bitters.", price: "15" },
-              { name: "Mexican Mule", description: "Made with Cazadores Blanco Tequila, fresh lime juice and ginger beer.", price: "15" },
-              { name: "Bacardi Mojito", description: "Bacardi Silver Rum, fresh mint leaves, fresh lime juice, simple syrup and soda water. Classic recipe, classic taste.", price: "15" },
-              { name: "Sangria", description: "A classic red sangria made with merlot, brandy and a mixture of juices and fruit.", price: "14.5" },
-              { name: "Coronarita", description: "Our famous house margarita topped with a coronita. Yum!", price: "19" },
-              { name: "California Cadillac", description: "Our signature skinny margarita made with Cazadores Blanco Tequila, fresh lime juice, and agave nectar, prepared \"Cadillac\" style.", price: "15.5" },
-            ],
-          },
-        ],
-      },
     ],
   },
   {
