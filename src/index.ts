@@ -65,4 +65,7 @@ export { SiteFooter } from "./components/site/SiteFooter";
 export { SiteHeader } from "./components/site/SiteHeader";
 export { cn } from "./lib/utils";
 export { BrandFonts } from "./components/BrandFonts";
+export { useIsMobile } from "./hooks/use-mobile";
+export * from "./lib/site-data";
+
 

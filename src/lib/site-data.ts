@@ -510,6 +510,75 @@ export const menus: Menu[] = [
     ],
   },
   {
+    id: "lunch-specials",
+    label: "Lunch Specials",
+    blurb: "Monday – Friday, 11 AM – 3 PM.",
+    menus: [
+      {
+        id: "lunch-food",
+        label: "Lunch Food",
+        blurb: "Monday – Friday, 11 AM – 3 PM.",
+        groups: [
+          {
+            title: "Lunch Specials",
+            items: [
+              { name: "Avila's Soup", description: "A large bowl of our famous Avila's Soup. Served with fresh tortillas. Add a fresh green salad for $2.", price: "15" },
+              { name: "Grande Taco Salad", description: "A flaky flour tortilla shell filled with lettuce, beans and your choice of shredded chicken, beef or grilled chicken. Topped with pico, cheese, guacamole and sour cream.", price: "17" },
+              { name: "Azteca Chicken Salad", description: "Grilled marinated chicken in a cilantro-lime dressing served over a bed of fresh lettuce. Garnished with succulent fresh tomato, sliced avocado, black bean and corn relish. Topped with Mexican corn tortilla crouton chips.", price: "17" },
+              { name: "Azteca Burrito", description: "Filled with shredded chicken, chile verde or beef and beans. Smothered with salsa ranchera and melted cheese. Garnished with guacamole.", price: "17" },
+              { name: "Chile Relleno Burrito", description: "Filled with a fresh roasted chile stuffed with cheese, frijoles frescos and salsa fresca. Smothered with salsa ranchera and melted cheese. Garnished with guacamole.", price: "17" },
+              { name: "Baja Bowl", description: "Your choice of grilled chicken breast, steak or white fish, over rice and black beans, served with salsa fresca, avocado, cilantro and tomatillo salsa. Your choice of warm tortillas. Substitute with wild caught shrimp add $4.", price: "18" },
+              { name: "Tacos and Caldo", description: "A small bowl of our famous Avila's soup, served with two crispy tacos, taquitos or chicken flautas.", price: "18" },
+              { name: "Jalisco", description: "Your choice of crispy taco, cheese enchilada or a tamale. Served with Mexican rice and beans.", price: "16" },
+              { name: "Avocado Tacos", description: "Two soft tacos made with corn tortillas filled with fresh avocado, crisp lettuce, pico de gallo and cheese with a spicy ranch buffalo sauce served on the side. Served with Mexican rice and beans.", price: "17.5" },
+              { name: "Light Enchiladas", description: "Two chicken enchiladas specially prepared with all white meat chicken and low-fat cheese. Your choice of salsa tomatillo or salsa roja. Served with frijoles frescos and a salad.", price: "18" },
+              { name: "Sizzling Light Chicken Fajitas", description: "Thin strips of chicken sizzled with mushrooms, zucchini, bell peppers, tomatoes, onions and frijoles frescos. Served with salad.", price: "21.5" },
+              { name: "Tampiqueña", description: "Tender sliced U.S.D.A. steak grilled in the authentic Mexican style alongside a delicious cheese enchilada. Served with Mexican rice and beans.", price: "22" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "lunch-drinks",
+        label: "Lunch Drinks",
+        blurb: "Local favorites, skinny cocktails and house classics.",
+        groups: [
+          {
+            title: "Local Favorites",
+            items: [
+              { name: "Cazadores Skinny Margarita", description: "Made with Cazadores Blanco, one of the Avila Family's favorite tequilas. Fresh lime juice and agave nectar.", price: "15" },
+              { name: "Tamarindo Chile Margarita", description: "A skinny style margarita made with Cazadores Blanco Tequila and tamarindo purée with serrano chiles. Tastes like a Mexican candy.", price: "15" },
+              { name: "Blood Orange Margarita", description: "Made with Cazadores Tequila Blanco and blood orange margarita mix.", price: "15" },
+            ],
+          },
+          {
+            title: "Skinny Cocktails",
+            items: [
+              { name: "Skinny Jalapeño Margarita", description: "Tanteo Jalapeño Tequila, our signature skinny margarita mix, made with fresh lime juice, fresh jalapeño and agave nectar. Habanero tequila upon request.", price: "15" },
+              { name: "Skinny Cucumber Vodka Margarita", description: "Cucumber vodka, our signature skinny margarita mix, made with fresh lime juice, cucumber slices and agave nectar.", price: "15" },
+              { name: "Skinny Coconut Margarita", description: "1800 Coconut Tequila, pineapple juice and our signature skinny margarita mix.", price: "15" },
+              { name: "Organic Margarita", description: "Señora Leona organic Blanco Tequila, organic agave nectar, fresh squeezed lime juice and soda water.", price: "16" },
+              { name: "Avila's Guava Margarita", description: "Our signature skinny margarita made with Cazadores Blanco Tequila, lime juice, agave nectar and 100% guava nectar.", price: "15" },
+            ],
+          },
+          {
+            title: "Popular Cocktails",
+            items: [
+              { name: "Patrón Chambord Margarita", description: "Our famous skinny margarita made with Patrón Silver. Topped with a splash of Chambord Black Raspberry Liqueur.", price: "16" },
+              { name: "Cazadores Pink Cadillac Margarita", description: "Cazadores Silver Tequila, fresh lime juice, agave nectar, and a splash of cranberry juice. Shaken with fresh lemons, limes and oranges. Prepared \"Cadillac\" style.", price: "15.5" },
+              { name: "Victor's Old Fashioned", description: "Maker's Mark Bourbon, old fashioned syrup and bitters.", price: "15" },
+              { name: "Mexican Mule", description: "Made with Cazadores Blanco Tequila, fresh lime juice and ginger beer.", price: "15" },
+              { name: "Bacardi Mojito", description: "Bacardi Silver Rum, fresh mint leaves, fresh lime juice, simple syrup and soda water. Classic recipe, classic taste.", price: "15" },
+              { name: "Sangria", description: "A classic red sangria made with merlot, brandy and a mixture of juices and fruit.", price: "14.5" },
+              { name: "Coronarita", description: "Our famous house margarita topped with a coronita. Yum!", price: "19" },
+              { name: "California Cadillac", description: "Our signature skinny margarita made with Cazadores Blanco Tequila, fresh lime juice, and agave nectar, prepared \"Cadillac\" style.", price: "15.5" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "happy-hour",
     label: "Happy Hour",
     blurb: "Cantina only, dine-in only. Monday–Friday, 3 PM – 7 PM. Available with the purchase of a beverage.",
