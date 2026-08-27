@@ -297,7 +297,7 @@ export function Menus() {
   const firstMenu = menus[0]!;
   const firstNested = firstMenu.menus?.[0] ?? firstMenu;
   const [activeMenu, setActiveMenu] = useState(firstMenu.id);
-  const [activeSubMenu, setActiveSubMenu] = setState(firstNested.id);
+  const [activeSubMenu, setActiveSubMenu] = useState(firstNested.id);
 
   const handleMenuChange = (value: string) => {
     setActiveMenu(value);
