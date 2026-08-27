@@ -296,6 +296,17 @@ function MenuGroups({ groups }: { groups: MenuGroup[] }) {
 export function Menus() {
   const firstMenu = menus[0]!;
   const firstNested = firstMenu.menus?.[0] ?? firstMenu;
+  const [activeMenu, setActiveMenu] = useState(firstMenu.id);
+  const [activeSubMenu, setActiveSubMenu] = setState(firstNested.id);
+
+  const handleMenuChange = (value: string) => {
+    setActiveMenu(value);
+    const menu = menus.find((m) => m.id === value);
+    const nested = menu?.menus?.[0];
+    if (nested) {
+      setActiveSubMenu(nested.id);
+    }
+  };
 
   return (
     <section id="menus" className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
@@ -303,13 +314,14 @@ export function Menus() {
         Mama Avila's recipes, made fresh every day in Santa Ana.
       </SectionHeading>
       <Reveal>
-        <Tabs defaultValue={firstMenu.id} className="mt-10">
-          <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
+        <Tabs value={activeMenu} onValueChange={handleMenuChange} className="mt-10">
+          <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center gap-1 rounded-full bg-background/60 p-1.5 shadow-sm">
             {menus.map((menu) => (
               <TabsTrigger
                 key={menu.id}
                 value={menu.id}
-                className="text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/15 hover:text-accent-foreground hover:shadow-sm data-[state=active]:hover:translate-y-0"
+                onMouseEnter={() => handleMenuChange(menu.id)}
+                className="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:bg-accent/15 hover:text-accent-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm data-[state=active]:ring-2 data-[state=active]:ring-primary/70"
               >
                 {menu.label}
               </TabsTrigger>
@@ -322,13 +334,14 @@ export function Menus() {
                 {menu.groups ? (
                   <MenuGroups groups={menu.groups} />
                 ) : menu.menus ? (
-                  <Tabs defaultValue={firstNested.id} className="mt-6">
-                    <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
+                  <Tabs value={activeSubMenu} onValueChange={setActiveSubMenu} className="mt-6">
+                    <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center gap-1 rounded-full bg-background/60 p-1.5 shadow-sm">
                       {menu.menus.map((sub) => (
                         <TabsTrigger
                           key={sub.id}
                           value={sub.id}
-                          className="text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/15 hover:text-accent-foreground hover:shadow-sm data-[state=active]:hover:translate-y-0"
+                          onMouseEnter={() => setActiveSubMenu(sub.id)}
+                          className="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:bg-accent/15 hover:text-accent-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm data-[state=active]:ring-2 data-[state=active]:ring-primary/70"
                         >
                           {sub.label}
                         </TabsTrigger>
