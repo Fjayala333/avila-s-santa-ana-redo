@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AccessibilityWidget } from "../components/site/AccessibilityWidget";
+import { BrandFonts } from "../components/BrandFonts";
 import { TooltipProvider } from "../components/ui/tooltip";
 import { Toaster } from "../components/ui/sonner";
 
