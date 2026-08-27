@@ -446,6 +446,15 @@ const fiestaEventTypes = [
   "Other",
 ];
 
+const banquetMenuChoices = [
+  "Buffet",
+  "Family Style",
+  "Plated Dinner",
+  "Taco Bar",
+  "Appetizer / Cocktail",
+  "Custom Menu",
+];
+
 function confettiBurst(x: number, y: number) {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const colors = ["var(--color-primary)", "oklch(0.55 0.16 28)", "oklch(0.55 0.13 150)"];
