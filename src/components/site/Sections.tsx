@@ -376,14 +376,14 @@ export function PartyTrays() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-px bg-border lg:grid-cols-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 bg-card p-3">
             {cateringGallery.map((item, i) => (
-              <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host bg-card">
+              <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host">
                 <img
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
-                  className="img-zoom aspect-[4/3] w-full object-cover"
+                  className="img-zoom h-28 w-auto rounded-sm object-cover shadow-sm"
                 />
               </Reveal>
             ))}
