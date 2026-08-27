@@ -70,35 +70,6 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
-          <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-accent">
-            Subscribe to our newsletter
-          </h2>
-          <form
-            className="mt-4 flex flex-col gap-3"
-            onSubmit={(e) => {
-              e.preventDefault();
-              (e.currentTarget as HTMLFormElement).reset();
-            }}
-          >
-            <label htmlFor="newsletter-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="newsletter-email"
-              type="email"
-              required
-              placeholder="Your email"
-              className="rounded-sm border border-ink-foreground/25 bg-transparent px-3 py-2 text-sm placeholder:text-ink-foreground/50 focus:border-accent focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="cta rounded-sm bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
       </div>
 
       <div className="border-t border-ink-foreground/15">
