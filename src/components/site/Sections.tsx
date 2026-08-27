@@ -361,8 +361,8 @@ export function PartyTrays() {
           Perfect for your next celebration. Order by the tray, or start with a ready-made package.
         </SectionHeading>
 
-        <Reveal delay={100} className="img-zoom-host mx-auto mt-10 max-w-4xl overflow-hidden rounded-sm shadow-xl">
-          <div className="relative">
+        <Reveal delay={100} className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-sm shadow-xl">
+          <div className="img-zoom-host relative">
             <img
               src={bannerSlide.src}
               alt={bannerSlide.alt}
@@ -375,20 +375,21 @@ export function PartyTrays() {
               </p>
             </div>
           </div>
+
+          <div className="grid grid-cols-2 gap-px bg-border lg:grid-cols-4">
+            {cateringGallery.map((item, i) => (
+              <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host bg-card">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="img-zoom aspect-[4/3] w-full object-cover"
+                />
+              </Reveal>
+            ))}
+          </div>
         </Reveal>
 
-        <div className="mx-auto mt-6 grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-4">
-          {cateringGallery.map((item, i) => (
-            <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host lift rounded-sm">
-              <img
-                src={item.src}
-                alt={item.alt}
-                loading="lazy"
-                className="img-zoom aspect-[4/3] w-full rounded-sm object-cover"
-              />
-            </Reveal>
-          ))}
-        </div>
 
         <Reveal delay={180}>
           <Tabs defaultValue={cateringMenu[0]!.id} className="mt-10">
