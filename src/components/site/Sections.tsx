@@ -435,36 +435,204 @@ export function PartyTrays() {
   );
 }
 
+const fiestaEventTypes = [
+  "Birthday",
+  "Quinceañera",
+  "Wedding Reception",
+  "Anniversary",
+  "Bridal or Baby Shower",
+  "Celebration of Life",
+  "Office Party",
+];
+
+function confettiBurst(x: number, y: number) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const colors = ["var(--color-primary)", "oklch(0.55 0.16 28)", "oklch(0.55 0.13 150)"];
+  for (let i = 0; i < 18; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 60 + Math.random() * 90;
+    const size = 5 + Math.random() * 5;
+    piece.style.left = `${x}px`;
+    piece.style.top = `${y}px`;
+    piece.style.width = `${size}px`;
+    piece.style.height = `${size}px`;
+    piece.style.background = colors[i % colors.length]!;
+    piece.style.borderRadius = i % 2 === 0 ? "999px" : "2px";
+    piece.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
+    piece.style.setProperty("--dy", `${Math.sin(angle) * dist}px`);
+    piece.style.setProperty("--rot", `${(Math.random() * 360).toFixed(0)}deg`);
+    document.body.appendChild(piece);
+    piece.addEventListener("animationend", () => piece.remove());
+  }
+}
+
+function FiestaBubble({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="animate-fade-up w-fit max-w-[85%] rounded-2xl rounded-bl-sm bg-secondary px-4 py-3 text-sm text-foreground">
+      {children}
+    </div>
+  );
+}
+
+function FiestaChatInquiry() {
+  const [eventType, setEventType] = useState<string | null>(null);
+  const [date, setDate] = useState("");
+  const [guests, setGuests] = useState("");
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const showDetails = eventType !== null;
+  const showContact = showDetails && date !== "" && guests !== "";
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const btn = e.currentTarget.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (btn) {
+      const r = btn.getBoundingClientRect();
+      confettiBurst(r.left + r.width / 2, r.top + r.height / 2);
+    }
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div>
+        <h3 className="font-display text-2xl text-foreground">Plan Your Fiesta</h3>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Answer a few quick questions and we'll follow up within one business day.
+        </p>
+      </div>
+
+      <FiestaBubble>Hi! What are we celebrating? 🎉</FiestaBubble>
+      <div className="animate-fade-up flex flex-wrap gap-2" style={{ animationDelay: "120ms" }}>
+        {fiestaEventTypes.map((type) => (
+          <button
+            key={type}
+            type="button"
+            onClick={() => setEventType(type)}
+            className={cn(
+              "rounded-full border px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition-colors",
+              eventType === type
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border text-foreground hover:border-primary hover:text-primary",
+            )}
+          >
+            {type}
+          </button>
+        ))}
+      </div>
+
+      {showDetails ? (
+        <>
+          <FiestaBubble>When's the big day, and how many guests?</FiestaBubble>
+          <div className="animate-fade-up ml-auto flex w-[85%] min-w-0 gap-2">
+            <input
+              type="date"
+              required
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="min-w-0 flex-1 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            />
+            <input
+              type="number"
+              min={1}
+              required
+              placeholder="Guests"
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+              className="w-20 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            />
+          </div>
+        </>
+      ) : null}
+
+      {showContact && !submitted ? (
+        <>
+          <FiestaBubble>Last thing — how do we reach you?</FiestaBubble>
+          <form
+            onSubmit={handleSubmit}
+            className="animate-fade-up ml-auto flex w-[85%] min-w-0 flex-col gap-2"
+          >
+            <input
+              placeholder="Your name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            />
+            <div className="flex gap-2">
+              <input
+                type="tel"
+                placeholder="Phone or email"
+                required
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                className="min-w-0 flex-1 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="cta shrink-0 rounded-sm bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </>
+      ) : null}
+
+      {submitted ? (
+        <FiestaBubble>
+          Got it{name.trim() ? `, ${name.trim().split(" ")[0]}` : ""} — we'll text you back within one
+          business day. ¡Gracias!
+        </FiestaBubble>
+      ) : null}
+    </div>
+  );
+}
+
 export function PrivateFiesta() {
+  const [hero, sideA, sideB] = diningSlides;
+
   return (
     <section id="private-fiesta" className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
       <SectionHeading kicker="WHERE FAMILY COMES TOGETHER" title="Outdoor Patio & Banquet Rooms">
         Planning a wedding, birthday, quinceañera, reunion, or business meeting? With authentic Mexican cuisine
         and impeccable service, we turn any gathering into a memorable fiesta.
       </SectionHeading>
-      <Reveal>
-        <Carousel opts={{ loop: true, align: "start" }} className="mt-10">
-          <CarouselContent>
-            {diningSlides.map((slide) => (
-              <CarouselItem key={slide.src} className="md:basis-1/2 lg:basis-1/3">
-                <figure>
-                  <div className="img-zoom-host rounded-sm">
-                    <img
-                      src={slide.src}
-                      alt={slide.alt}
-                      loading="lazy"
-                      className="img-zoom aspect-[4/3] w-full rounded-sm object-cover"
-                    />
-                  </div>
-                  <figcaption className="mt-2 text-xs text-muted-foreground">{slide.alt}</figcaption>
-                </figure>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="-left-2 transition-transform hover:scale-110" />
-          <CarouselNext className="-right-2 transition-transform hover:scale-110" />
-        </Carousel>
-      </Reveal>
+      <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_1fr] lg:items-start">
+        <div className="grid grid-cols-2 gap-3">
+          <Reveal className="img-zoom-host shine-host col-span-2 overflow-hidden rounded-sm">
+            <img
+              src={hero!.src}
+              alt={hero!.alt}
+              loading="lazy"
+              className="img-zoom aspect-[16/9] w-full object-cover"
+            />
+          </Reveal>
+          <Reveal delay={120} className="img-zoom-host shine-host overflow-hidden rounded-sm">
+            <img
+              src={sideA!.src}
+              alt={sideA!.alt}
+              loading="lazy"
+              className="img-zoom aspect-[4/3] w-full object-cover"
+            />
+          </Reveal>
+          <Reveal delay={220} className="img-zoom-host shine-host overflow-hidden rounded-sm">
+            <img
+              src={sideB!.src}
+              alt={sideB!.alt}
+              loading="lazy"
+              className="img-zoom aspect-[4/3] w-full object-cover"
+            />
+          </Reveal>
+        </div>
+        <Reveal delay={160} className="rounded-sm border border-border bg-card p-7 shadow-xl">
+          <FiestaChatInquiry />
+        </Reveal>
+      </div>
     </section>
   );
 }
