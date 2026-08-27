@@ -353,6 +353,7 @@ export function Menus() {
 
 export function PartyTrays() {
   const bannerSlide = partyTrays[1]!;
+  const allTrayImages = [bannerSlide, ...cateringGallery];
 
   return (
     <section id="party-trays" className="bg-secondary/60">
@@ -362,31 +363,22 @@ export function PartyTrays() {
         </SectionHeading>
 
         <Reveal delay={100} className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-sm shadow-xl">
-          <div className="img-zoom-host relative">
-            <img
-              src={bannerSlide.src}
-              alt={bannerSlide.alt}
-              loading="lazy"
-              className="img-zoom aspect-[21/8] w-full object-cover"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent p-4 pt-12">
-              <p className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-ink-foreground">
-                Real trays, ready to order
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 bg-card p-3">
-            {cateringGallery.map((item, i) => (
+          <div className="flex flex-wrap items-center justify-center gap-3 bg-card p-4">
+            {allTrayImages.map((item, i) => (
               <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host">
                 <img
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
-                  className="img-zoom h-28 w-auto rounded-sm object-cover shadow-sm"
+                  className="img-zoom h-32 w-auto rounded-sm object-cover shadow-sm"
                 />
               </Reveal>
             ))}
+          </div>
+          <div className="bg-card pb-4 text-center">
+            <p className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              Real trays, ready to order
+            </p>
           </div>
         </Reveal>
 
