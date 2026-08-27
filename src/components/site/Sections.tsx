@@ -21,6 +21,7 @@ import {
   experience,
   menus,
   cateringMenu,
+  banquetPricingTeasers,
   type MenuGroup,
 } from "../../lib/site-data";
 
@@ -663,6 +664,31 @@ export function PrivateFiesta() {
         Planning a wedding, birthday, quinceañera, reunion, or business meeting? With authentic Mexican cuisine
         and impeccable service, we turn any gathering into a memorable fiesta.
       </SectionHeading>
+
+      <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+        {banquetPricingTeasers.map((tier, i) => (
+          <Reveal
+            key={tier.name}
+            delay={i * 120}
+            className="rounded-sm border border-border bg-card p-5 shadow-sm"
+          >
+            <p className="text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground">{tier.cap}</p>
+            <h3 className="mt-1 font-display text-lg text-foreground">{tier.name}</h3>
+            <p className="mt-1 font-display text-2xl text-primary">
+              ${tier.price}
+              <span className="text-sm font-sans text-muted-foreground"> /person</span>
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tier.description}</p>
+            <a
+              href="/fiestas-celebrations"
+              className="mt-3 inline-block text-xs font-bold uppercase tracking-wide text-primary hover:opacity-80"
+            >
+              See full menu →
+            </a>
+          </Reveal>
+        ))}
+      </div>
+
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_1fr] lg:items-start">
         <div className="grid grid-cols-2 gap-3">
           <Reveal className="img-zoom-host shine-host col-span-2 overflow-hidden rounded-sm">

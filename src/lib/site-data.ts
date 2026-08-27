@@ -875,13 +875,6 @@ export const banquetMenus: Menu[] = [
           },
         ],
       },
-      {
-        title: "Sweet Endings & Add-Ons",
-        items: [
-          { name: "Assortment of Poco Dulce", price: "6", description: "Empanadillas, churros and buñuelitos. Per person." },
-          { name: "Guacamole for the Table", price: "16", description: "Added to each table." },
-        ],
-      },
     ],
   },
 ];
@@ -901,6 +894,11 @@ export const beverageOptions = [
   },
 ];
 
+export const banquetAddOns = [
+  { name: "Assortment of Poco Dulce", price: "6", description: "Empanadillas, churros and buñuelitos. Per person." },
+  { name: "Guacamole for the Table", price: "16", description: "Added to each table." },
+];
+
 export const banquetPolicies = [
   "Groups under 35: order from our pre-selected limited menus.",
   "Groups of 35 or more: choose from our buffet menus. A set-up fee of $100–$300+ applies, depending on group size.",
@@ -908,6 +906,27 @@ export const banquetPolicies = [
   "A 20% service charge and sales tax will be added to your bill.",
   "A deposit is required to reserve your banquet date — ask the manager for details.",
   "Linens are available for $22 per guest table. Some restrictions apply.",
+];
+
+export const banquetPricingTeasers = [
+  {
+    cap: "35 Guests or Less",
+    name: "Limited Menu #1",
+    price: "29",
+    description: "Quesadilla Avila, grilled chicken salad, Azteca burrito, combination plate or chingolingas.",
+  },
+  {
+    cap: "35 Guests or Less",
+    name: "Limited Menu #2",
+    price: "32",
+    description: "Sizzling fajitas, carnitas or enchiladas tomatillas. All include salad.",
+  },
+  {
+    cap: "35 Guests or More",
+    name: "Buffet Packages",
+    price: "26+",
+    description: "Macarena Combo, Sizzling Fajitas, Mexico City, Lunch Buffet or Cocktail Party.",
+  },
 ];
 
 export const hours = [

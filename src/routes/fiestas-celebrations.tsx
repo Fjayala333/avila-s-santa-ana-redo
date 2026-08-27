@@ -13,8 +13,50 @@ import {
   diningSlides,
   banquetMenus,
   beverageOptions,
+  banquetAddOns,
   banquetPolicies,
 } from "@/lib/site-data";
+
+function BeverageAndAddOnsAccordion() {
+  return (
+    <div className="mx-auto mt-10 max-w-2xl">
+      <details open className="group border-b border-border">
+        <summary className="flex cursor-pointer list-none items-center justify-between py-4 font-display text-lg text-foreground">
+          Beverage Options
+          <span aria-hidden="true" className="font-sans text-xl text-primary transition-transform group-open:rotate-45">
+            +
+          </span>
+        </summary>
+        <div className="flex flex-col gap-4 pb-5">
+          {beverageOptions.map((option) => (
+            <div key={option.name}>
+              <p className="text-sm font-bold text-foreground">{option.name}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{option.description}</p>
+            </div>
+          ))}
+        </div>
+      </details>
+      <details className="group border-b border-border">
+        <summary className="flex cursor-pointer list-none items-center justify-between py-4 font-display text-lg text-foreground">
+          Sweet Endings &amp; Add-Ons
+          <span aria-hidden="true" className="font-sans text-xl text-primary transition-transform group-open:rotate-45">
+            +
+          </span>
+        </summary>
+        <div className="flex flex-col gap-4 pb-5">
+          {banquetAddOns.map((item) => (
+            <div key={item.name}>
+              <p className="text-sm font-bold text-foreground">
+                {item.name} — <span className="text-primary">${item.price}</span>
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </details>
+    </div>
+  );
+}
 
 const title = "Banquets & Private Events | Avila's El Ranchito Santa Ana";
 const description =
@@ -69,7 +111,7 @@ function FiestasCelebrationsPage() {
           <SectionHeading kicker="Good to Know" title="Banquet Information">
             A few things to plan around before your event.
           </SectionHeading>
-          <Reveal className="mx-auto mt-10 max-w-3xl rounded-sm border border-border bg-card p-7 shadow-xl">
+          <Reveal className="mx-auto mt-10 max-w-2xl rounded-sm bg-secondary p-7 sm:p-10">
             <ul className="flex flex-col gap-4">
               {banquetPolicies.map((policy) => (
                 <li key={policy} className="flex gap-3 text-sm leading-relaxed text-foreground">
@@ -115,21 +157,12 @@ function FiestasCelebrationsPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-16 lg:py-24">
-          <SectionHeading kicker="Cheers" title="Beverage Options">
-            Choose how your guests will drink to the occasion.
+          <SectionHeading kicker="Cheers" title="Beverage &amp; Add-Ons">
+            Choose how your guests will drink to the occasion, and round out the menu.
           </SectionHeading>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-3">
-            {beverageOptions.map((option, i) => (
-              <Reveal
-                key={option.name}
-                delay={i * 140}
-                className="lift rounded-sm border border-border bg-card p-6 text-center"
-              >
-                <h3 className="font-display text-lg text-foreground">{option.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{option.description}</p>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <BeverageAndAddOnsAccordion />
+          </Reveal>
         </section>
 
         <section className="bg-secondary/60">
