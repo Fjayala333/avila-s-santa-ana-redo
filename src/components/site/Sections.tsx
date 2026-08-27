@@ -17,6 +17,7 @@ import {
   highlightCards,
   diningSlides,
   partyTrays,
+  cateringGallery,
   experience,
   menus,
   cateringMenu,
