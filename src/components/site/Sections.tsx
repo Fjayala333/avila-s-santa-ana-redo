@@ -438,7 +438,7 @@ export function PartyTrays() {
 export function PrivateFiesta() {
   return (
     <section id="private-fiesta" className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
-      <SectionHeading kicker="Private Fiesta" title="Indoor Patio & Banquet Rooms">
+      <SectionHeading kicker="WHERE FAMILY COMES TOGETHER" title="Indoor Patio & Banquet Rooms">
         Planning a wedding, birthday, quinceañera, reunion, or business meeting? With authentic Mexican cuisine
         and impeccable service, we turn any gathering into a memorable fiesta.
       </SectionHeading>
