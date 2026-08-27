@@ -447,12 +447,14 @@ const fiestaEventTypes = [
 ];
 
 const banquetMenuChoices = [
-  "Buffet",
-  "Family Style",
-  "Plated Dinner",
-  "Taco Bar",
-  "Appetizer / Cocktail",
-  "Custom Menu",
+  "Limited Menu #1",
+  "Limited Menu #2",
+  "Macarena Combo Buffet",
+  "Sizzling Fajitas Buffet",
+  "Mexico City Buffet",
+  "Lunch Buffet",
+  "Cocktail Party",
+  "Poco Dulce Desserts",
 ];
 
 function confettiBurst(x: number, y: number) {
