@@ -1,4 +1,5 @@
 import logoHd from "../assets/avilas-logo-transparent.png.asset.json";
+import partyTrayBanner from "../assets/party-tray-banner.jpg.asset.json";
 import tray1 from "../assets/tray-catering1.jpg.asset.json";
 import tray2 from "../assets/tray-images.jpg.asset.json";
 import tray3 from "../assets/tray-images-2.jpg.asset.json";
