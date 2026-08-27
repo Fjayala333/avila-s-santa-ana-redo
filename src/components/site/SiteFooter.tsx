@@ -4,7 +4,7 @@ import logoAsset from "../../assets/avilas-logo-transparent.png.asset.json";
 export function SiteFooter() {
   return (
     <footer id="contact" className="bg-ink text-ink-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <a
             href="#top"
