@@ -72,6 +72,13 @@ export const partyTrays = [
   { src: u("aece31bc-0746-4502-933d-f16188276018"), alt: "Catering spread with enchiladas, salads, chips and party platters" },
 ];
 
+export const cateringGallery = [
+  { src: tray1.url, alt: "Catering enchilada tray with a fresh chicken taco salad" },
+  { src: tray2.url, alt: "Party platter with burritos, flautas and tacos" },
+  { src: tray3.url, alt: "Full tray of cheese-topped enchiladas in red sauce" },
+  { src: tray4.url, alt: "Catering spread with fajitas, salad, enchiladas and flautas" },
+];
+
 export const experience = [
   { src: u("551a51b9-0ac9-4ff0-99b2-7d989cb5fbbb"), title: "Signature Cocktails", alt: "Refreshing orange drink with Avila's El Ranchito branding" },
   { src: u("ef84b864-082c-4546-9752-de94d6257b21"), title: "Specialty Margaritas", alt: "Spicy red margarita with chili salt rim and lime" },
