@@ -516,7 +516,7 @@ export const menus: Menu[] = [
     menus: [
       {
         id: "lunch-food",
-        label: "Lunch Food",
+        label: "LUNCH SPECIALS",
         blurb: "Monday – Friday, 11 AM – 3 PM.",
         groups: [
           {
