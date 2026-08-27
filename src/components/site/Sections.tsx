@@ -366,7 +366,8 @@ export function PartyTrays() {
             <Reveal
               key={item.src}
               delay={i * 120}
-              className="img-zoom-host shine-host overflow-hidden rounded-sm shadow-lg"
+              as="figure"
+              className="group img-zoom-host shine-host lift relative overflow-hidden rounded-sm shadow-lg ring-1 ring-foreground/5 transition-all duration-500 hover:ring-primary/40"
             >
               <img
                 src={item.src}
@@ -374,6 +375,9 @@ export function PartyTrays() {
                 loading="lazy"
                 className="img-zoom aspect-[4/3] w-full object-cover"
               />
+              <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-ink/85 to-transparent p-3 pt-8 text-center text-xs font-bold uppercase tracking-widest text-ink-foreground transition-transform duration-500 ease-out group-hover:translate-y-0">
+                {item.alt}
+              </figcaption>
             </Reveal>
           ))}
         </div>
