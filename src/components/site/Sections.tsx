@@ -493,13 +493,16 @@ function FiestaChatInquiry() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
+  const [guestsTouched, setGuestsTouched] = useState(false);
   const [banquetMenu, setBanquetMenu] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const showDetails = eventType !== null;
-  const detailsComplete = date !== "" && time !== "" && guests !== "";
+  const guestCount = Number(guests);
+  const guestsValid = guests !== "" && Number.isFinite(guestCount) && guestCount >= 1;
+  const detailsComplete = date !== "" && time !== "" && guestsValid;
   const showMenuChoices = showDetails && detailsComplete;
   const showContact = showMenuChoices && banquetMenu !== null;
 
