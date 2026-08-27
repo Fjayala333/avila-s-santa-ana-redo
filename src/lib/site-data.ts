@@ -1,4 +1,5 @@
 import logoHd from "../assets/avilas-logo-transparent.png.asset.json";
+import partyTrayBanner from "../assets/party-tray-banner.jpg.asset.json";
 import tray1 from "../assets/tray-catering1.jpg.asset.json";
 import tray2 from "../assets/tray-images.jpg.asset.json";
 import tray3 from "../assets/tray-images-2.jpg.asset.json";
@@ -72,7 +73,7 @@ export const diningSlides = [
 
 export const partyTrays = [
   { src: u("8bcb0208-e35e-42d2-9ee9-07c33b2d4eb1"), alt: "Party tray with tacos, flautas, guacamole and tortillas on a colorful serape" },
-  { src: u("3c54d852-2525-4267-bd68-7565d67d8200"), alt: "Party tray featuring tacos, flautas, guacamole and margaritas" },
+  { src: partyTrayBanner.url, alt: "Party tray featuring tacos, flautas, guacamole and tortillas on a colorful serape" },
   { src: u("aece31bc-0746-4502-933d-f16188276018"), alt: "Catering spread with enchiladas, salads, chips and party platters" },
 ];
 
