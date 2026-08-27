@@ -107,6 +107,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <BrandFonts />
       </head>
       <body>
         {children}
