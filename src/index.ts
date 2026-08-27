@@ -48,7 +48,9 @@ export * from "./components/ui/toggle-group";
 export * from "./components/ui/tooltip";
 
 export { AccessibilityWidget } from "./components/site/AccessibilityWidget";
+export { BrandTicker } from "./components/site/BrandTicker";
 export { Reveal } from "./components/site/Reveal";
+export { ScrollProgress } from "./components/site/ScrollProgress";
 export {
   Hero,
   Highlights,
