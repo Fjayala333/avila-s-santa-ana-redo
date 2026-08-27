@@ -569,11 +569,20 @@ function FiestaChatInquiry() {
               type="number"
               min={1}
               required
-              placeholder="Number of guests"
+              placeholder="Number of guests *"
               value={guests}
               onChange={(e) => setGuests(e.target.value)}
-              className="w-full rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+              onBlur={() => setGuestsTouched(true)}
+              className={cn(
+                "w-full rounded-sm border bg-card px-3 py-2 text-sm focus:outline-none",
+                guestsTouched && !guestsValid
+                  ? "border-red-400 focus:border-red-400"
+                  : "border-border focus:border-primary",
+              )}
             />
+            {guestsTouched && !guestsValid ? (
+              <p className="text-xs text-red-500">Please enter a guest count of at least 1.</p>
+            ) : null}
           </div>
         </>
       ) : null}
