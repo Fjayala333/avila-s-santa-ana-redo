@@ -31,7 +31,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header id="top">
+    <header id="top" className="sticky top-0 z-50">
       <ScrollProgress />
       <div
         className={cn(
@@ -85,7 +85,7 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "sticky top-0 z-50 border-b border-ink-foreground/15 bg-ink/95 text-ink-foreground backdrop-blur transition-shadow duration-500 supports-[backdrop-filter]:bg-ink/80",
+          "border-b border-ink-foreground/15 bg-ink/95 text-ink-foreground backdrop-blur transition-shadow duration-500 supports-[backdrop-filter]:bg-ink/80",
           scrolled && "shadow-[0_8px_30px_-12px_oklch(0_0_0/50%)]",
         )}
       >
