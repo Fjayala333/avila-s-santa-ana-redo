@@ -1,4 +1,8 @@
 import logoHd from "../assets/avilas-logo-transparent.png.asset.json";
+import tray1 from "../assets/tray-catering1.jpg.asset.json";
+import tray2 from "../assets/tray-images.jpg.asset.json";
+import tray3 from "../assets/tray-images-2.jpg.asset.json";
+import tray4 from "../assets/tray-images-3.jpg.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",
