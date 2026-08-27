@@ -443,6 +443,7 @@ const fiestaEventTypes = [
   "Bridal or Baby Shower",
   "Celebration of Life",
   "Office Party",
+  "Other",
 ];
 
 function confettiBurst(x: number, y: number) {
