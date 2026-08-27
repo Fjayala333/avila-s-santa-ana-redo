@@ -353,6 +353,7 @@ export function Menus() {
 
 export function PartyTrays() {
   const galleryImages = [partyTrays[1]!, ...cateringGallery];
+  const [activeTab, setActiveTab] = useState(cateringMenu[0]!.id);
 
   return (
     <section id="party-trays" className="bg-secondary/60">
@@ -383,13 +384,14 @@ export function PartyTrays() {
         </div>
 
         <Reveal delay={180}>
-          <Tabs defaultValue={cateringMenu[0]!.id} className="mt-10">
-            <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-10">
+            <TabsList className="mx-auto flex h-auto w-fit flex-wrap justify-center gap-1 rounded-full bg-background/60 p-1.5 shadow-sm">
               {cateringMenu.map((menu) => (
                 <TabsTrigger
                   key={menu.id}
                   value={menu.id}
-                  className="text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/15 hover:text-accent-foreground hover:shadow-sm data-[state=active]:hover:translate-y-0"
+                  onMouseEnter={() => setActiveTab(menu.id)}
+                  className="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:bg-accent/15 hover:text-accent-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm data-[state=active]:ring-2 data-[state=active]:ring-primary/70"
                 >
                   {menu.label}
                 </TabsTrigger>
