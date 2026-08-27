@@ -480,13 +480,15 @@ function FiestaBubble({ children }: { children: React.ReactNode }) {
 function FiestaChatInquiry() {
   const [eventType, setEventType] = useState<string | null>(null);
   const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const showDetails = eventType !== null;
-  const showContact = showDetails && date !== "" && guests !== "";
+  const detailsComplete = date !== "" && time !== "" && guests !== "";
+  const showContact = showDetails && detailsComplete;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -528,23 +530,32 @@ function FiestaChatInquiry() {
 
       {showDetails ? (
         <>
-          <FiestaBubble>When's the big day, and how many guests?</FiestaBubble>
-          <div className="animate-fade-up ml-auto flex w-[85%] min-w-0 gap-2">
-            <input
-              type="date"
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="min-w-0 flex-1 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
-            />
+          <FiestaBubble>When's the big day, what time, and how many guests?</FiestaBubble>
+          <div className="animate-fade-up ml-auto flex w-[85%] min-w-0 flex-col gap-2">
+            <div className="flex gap-2">
+              <input
+                type="date"
+                required
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="min-w-0 flex-1 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+              />
+              <input
+                type="time"
+                required
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                className="w-24 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+              />
+            </div>
             <input
               type="number"
               min={1}
               required
-              placeholder="Guests"
+              placeholder="Number of guests"
               value={guests}
               onChange={(e) => setGuests(e.target.value)}
-              className="w-20 rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
+              className="w-full rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
             />
           </div>
         </>
