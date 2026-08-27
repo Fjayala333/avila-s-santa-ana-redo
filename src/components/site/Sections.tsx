@@ -352,8 +352,7 @@ export function Menus() {
 }
 
 export function PartyTrays() {
-  const bannerSlide = partyTrays[1]!;
-  const allTrayImages = [bannerSlide, ...cateringGallery];
+  const galleryImages = [partyTrays[1]!, ...cateringGallery];
 
   return (
     <section id="party-trays" className="bg-secondary/60">
@@ -362,26 +361,22 @@ export function PartyTrays() {
           Perfect for your next celebration. Order by the tray, or start with a ready-made package.
         </SectionHeading>
 
-        <Reveal delay={100} className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-sm shadow-xl">
-          <div className="flex flex-wrap items-center justify-center gap-3 bg-card p-4">
-            {allTrayImages.map((item, i) => (
-              <Reveal key={item.src} delay={i * 120} className="img-zoom-host shine-host">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="img-zoom h-32 w-auto rounded-sm object-cover shadow-sm"
-                />
-              </Reveal>
-            ))}
-          </div>
-          <div className="bg-card pb-4 text-center">
-            <p className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Real trays, ready to order
-            </p>
-          </div>
-        </Reveal>
-
+        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {galleryImages.map((item, i) => (
+            <Reveal
+              key={item.src}
+              delay={i * 120}
+              className="img-zoom-host shine-host overflow-hidden rounded-sm shadow-lg"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="img-zoom aspect-[4/3] w-full object-cover"
+              />
+            </Reveal>
+          ))}
+        </div>
 
         <Reveal delay={180}>
           <Tabs defaultValue={cateringMenu[0]!.id} className="mt-10">
