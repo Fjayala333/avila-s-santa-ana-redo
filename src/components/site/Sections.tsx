@@ -67,8 +67,17 @@ export function Hero() {
   }, [api]);
 
   return (
-    <section className="bg-secondary/60">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
+    <section className="relative overflow-hidden bg-secondary/60">
+      <div
+        aria-hidden="true"
+        className="animate-blob pointer-events-none absolute -left-24 -top-24 size-96 rounded-full bg-primary/25 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="animate-blob pointer-events-none absolute -bottom-32 -right-16 size-[28rem] rounded-full bg-accent/20 blur-3xl"
+        style={{ animationDelay: "3s" }}
+      />
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
         <div className="text-center lg:text-left">
           <p className="animate-fade-up font-sans text-xs font-bold uppercase tracking-[0.3em] text-primary">
             Since 1966
@@ -90,7 +99,7 @@ export function Hero() {
           <div className="animate-fade-up mt-8 flex flex-wrap justify-center gap-3 lg:justify-start" style={{ animationDelay: "420ms" }}>
             <a
               href={site.phoneHref}
-              className="cta rounded-sm bg-primary px-6 py-3 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
+              className="cta cta-glow rounded-sm bg-primary px-6 py-3 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
             >
               Call to Order
             </a>
@@ -152,6 +161,15 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <div
+        aria-hidden="true"
+        className="animate-bounce pointer-events-none absolute inset-x-0 bottom-4 z-10 hidden justify-center text-foreground/40 lg:flex"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
     </section>
   );
 }
@@ -204,21 +222,27 @@ export function OurStory() {
   return (
     <section id="our-story" className="bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
-        <Reveal>
-          <p className="font-sans text-xs font-bold uppercase tracking-[0.28em] text-accent">Our History</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight sm:text-4xl">Established in 1983</h2>
-          <p className="mt-6 leading-relaxed text-ink-foreground/80">
-            It all started back in the kitchen in 1966, when the Avila family came to the United States from
-            Guanajuato, Mexico. Mama brought her delicious family recipes. Today Avila's El Ranchito is still
-            family-owned, family-operated, and family-loved.
-          </p>
-          <p className="mt-4 leading-relaxed text-ink-foreground/80">
-            Victor Avila built this location in 1983 and still operates it today with the help of his long-time
-            General Manager, Karen Edwards. Featuring several banquet rooms, Avila's hosts milestone birthday
-            parties, anniversary celebrations, bridal showers, intimate wedding receptions, quinceañera
-            celebrations, celebration of life memorials, and happy hour office parties.
-          </p>
-        </Reveal>
+        <div>
+          <Reveal>
+            <p className="font-sans text-xs font-bold uppercase tracking-[0.28em] text-accent">Our History</p>
+            <h2 className="mt-3 font-display text-3xl leading-tight sm:text-4xl">Established in 1983</h2>
+          </Reveal>
+          <Reveal delay={140}>
+            <p className="mt-6 leading-relaxed text-ink-foreground/80">
+              It all started back in the kitchen in 1966, when the Avila family came to the United States from
+              Guanajuato, Mexico. Mama brought her delicious family recipes. Today Avila's El Ranchito is still
+              family-owned, family-operated, and family-loved.
+            </p>
+          </Reveal>
+          <Reveal delay={260}>
+            <p className="mt-4 leading-relaxed text-ink-foreground/80">
+              Victor Avila built this location in 1983 and still operates it today with the help of his long-time
+              General Manager, Karen Edwards. Featuring several banquet rooms, Avila's hosts milestone birthday
+              parties, anniversary celebrations, bridal showers, intimate wedding receptions, quinceañera
+              celebrations, celebration of life memorials, and happy hour office parties.
+            </p>
+          </Reveal>
+        </div>
         <Reveal delay={180} className="img-zoom-host rounded-sm">
           <img
             src={heroSlides[0]!.src}
@@ -405,7 +429,7 @@ export function SignatureExperience() {
             <CarouselContent>
               {experience.map((item) => (
                 <CarouselItem key={item.src} className="sm:basis-1/2 lg:basis-1/4">
-                  <figure className="img-zoom-host lift rounded-sm bg-card">
+                  <figure className="img-zoom-host shine-host lift rounded-sm bg-card">
                     <img
                       src={item.src}
                       alt={item.alt}
@@ -434,8 +458,8 @@ export function Reviews() {
       <SectionHeading kicker="Reviews" title="What Our Guests Are Saying">
         Real reviews from real guests, straight from Google and Yelp.
       </SectionHeading>
-      <Reveal>
-        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+      <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <Reveal>
           <a
             href={site.googleReviewsUrl}
             target="_blank"
@@ -444,7 +468,11 @@ export function Reviews() {
           >
             <div className="flex gap-1 text-primary" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-5 fill-current" />
+                <Star
+                  key={i}
+                  className="size-5 fill-current transition-transform duration-300 group-hover:scale-110"
+                  style={{ transitionDelay: `${i * 40}ms` }}
+                />
               ))}
             </div>
             <p className="font-display text-xl text-foreground">Read our Google Reviews</p>
@@ -454,6 +482,8 @@ export function Reviews() {
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </span>
           </a>
+        </Reveal>
+        <Reveal delay={140}>
           <a
             href={site.yelpUrl}
             target="_blank"
@@ -462,7 +492,11 @@ export function Reviews() {
           >
             <div className="flex gap-1 text-primary" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-5 fill-current" />
+                <Star
+                  key={i}
+                  className="size-5 fill-current transition-transform duration-300 group-hover:scale-110"
+                  style={{ transitionDelay: `${i * 40}ms` }}
+                />
               ))}
             </div>
             <p className="font-display text-xl text-foreground">Read our Yelp Reviews</p>
@@ -472,8 +506,8 @@ export function Reviews() {
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </span>
           </a>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
       <Reveal delay={120} className="mt-10 text-center">
         <p className="text-muted-foreground">Have you dined with us? We'd love to hear about your experience!</p>
         <div className="mt-4 flex flex-wrap justify-center gap-3">

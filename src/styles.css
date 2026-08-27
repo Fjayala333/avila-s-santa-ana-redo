@@ -363,6 +363,52 @@
   animation: accordion-up 0.2s ease-out;
 }
 
+@keyframes ranchito-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: ranchito-marquee 28s linear infinite;
+}
+
+@keyframes ranchito-blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(3%, -4%) scale(1.08);
+  }
+  66% {
+    transform: translate(-3%, 3%) scale(0.96);
+  }
+}
+
+@utility animate-blob {
+  animation: ranchito-blob-drift 16s ease-in-out infinite;
+}
+
+@keyframes ranchito-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.735 0.115 87 / 55%);
+  }
+  70% {
+    box-shadow: 0 0 0 14px oklch(0.735 0.115 87 / 0%);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.735 0.115 87 / 0%);
+  }
+}
+
+@utility cta-glow {
+  animation: ranchito-pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

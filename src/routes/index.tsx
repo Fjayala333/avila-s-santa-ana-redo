@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { BrandTicker } from "@/components/site/BrandTicker";
 import {
   Hero,
   Highlights,
@@ -63,6 +64,7 @@ function HomePage() {
       <SiteHeader />
       <main>
         <Hero />
+        <BrandTicker />
         <Highlights />
         <OurStory />
         <Menus />
