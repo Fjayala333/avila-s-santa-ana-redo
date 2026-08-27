@@ -491,13 +491,15 @@ function FiestaChatInquiry() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
+  const [banquetMenu, setBanquetMenu] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const showDetails = eventType !== null;
   const detailsComplete = date !== "" && time !== "" && guests !== "";
-  const showContact = showDetails && detailsComplete;
+  const showMenuChoices = showDetails && detailsComplete;
+  const showContact = showMenuChoices && banquetMenu !== null;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -567,6 +569,29 @@ function FiestaChatInquiry() {
               onChange={(e) => setGuests(e.target.value)}
               className="w-full rounded-sm border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:outline-none"
             />
+          </div>
+        </>
+      ) : null}
+
+      {showMenuChoices && !submitted ? (
+        <>
+          <FiestaBubble>Which banquet menu style interests you?</FiestaBubble>
+          <div className="animate-fade-up flex flex-wrap gap-2" style={{ animationDelay: "120ms" }}>
+            {banquetMenuChoices.map((choice) => (
+              <button
+                key={choice}
+                type="button"
+                onClick={() => setBanquetMenu(choice)}
+                className={cn(
+                  "rounded-full border px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition-colors",
+                  banquetMenu === choice
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border text-foreground hover:border-primary hover:text-primary",
+                )}
+              >
+                {choice}
+              </button>
+            ))}
           </div>
         </>
       ) : null}
