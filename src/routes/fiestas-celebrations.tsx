@@ -226,18 +226,8 @@ function FiestasCelebrationsPage() {
             <SectionHeading kicker="See the Space" title="Indoor Patio &amp; Banquet Rooms">
               A quick look at where your celebration will happen.
             </SectionHeading>
-            <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_1fr] lg:items-start">
-              <div className="grid grid-cols-2 gap-3">
-                <Reveal className="img-zoom-host shine-host col-span-2 overflow-hidden rounded-sm">
-                  <img
-                    src={diningSlides[2]!.src}
-                    alt={diningSlides[2]!.alt}
-                    loading="lazy"
-                    className="img-zoom aspect-[16/9] w-full object-cover"
-                  />
-                </Reveal>
-              </div>
-              <Reveal delay={160} className="rounded-sm border border-border bg-card p-7 shadow-xl">
+            <div className="mt-10">
+              <Reveal delay={160} className="mx-auto max-w-2xl rounded-sm border border-border bg-card p-7 shadow-xl">
                 <FiestaChatInquiry />
               </Reveal>
             </div>
