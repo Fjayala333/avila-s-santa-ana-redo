@@ -10,6 +10,9 @@ import buffetSetup from "../assets/IMG_2045.jpg.asset.json";
 import fiestaBuffet from "../assets/IMG_2053.jpg.asset.json";
 import diningRoomFireplace from "../assets/Avila_sSantaAna-41.jpg.asset.json";
 import diningRoomWide from "../assets/Avila_sSantaAna-42.jpg.asset.json";
+import babyShowerRoom from "../assets/fiesta-6e7c8bdf.png.asset.json";
+import intimateLongTable from "../assets/fiesta-27c2f9ac.png.asset.json";
+import balloonPartyRoom from "../assets/fiesta-6c1c6251.png.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",
@@ -947,6 +950,9 @@ export const fiestaBentoImages = [
   { src: u("388eb6aa-e353-42a4-a2b0-ecf90732fb7d"), alt: "Dining room with stone fireplace and wooden tables" },
   { src: diningRoomWide.url, alt: "Spacious dining room with woven chairs and rustic wood ceilings" },
   { src: u("a3be50dc-364a-4135-9274-e34b4c5c70d1"), alt: "Interior dining room with fireplace and rustic decor" },
+  { src: babyShowerRoom.url, alt: "Baby shower setup with pink balloons and long banquet tables", caption: "Baby Showers" },
+  { src: intimateLongTable.url, alt: "Intimate private room with a candlelit long table set for dinner" },
+  { src: balloonPartyRoom.url, alt: "Birthday party room decorated with gold and black balloons" },
 ];
 
 export const hours = [
