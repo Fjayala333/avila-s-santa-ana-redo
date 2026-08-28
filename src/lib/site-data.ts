@@ -944,7 +944,7 @@ export const fiestaBentoImages = [
   { src: banquetLongTable.url, alt: "Banquet room set with a long table and floral centerpieces" },
   { src: u("717473c5-0bbd-4290-8fbf-f428475cac70"), alt: "Spacious dining area with bamboo ceiling", caption: "Grand Hall" },
   { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
-  { src: buffetSetup.url, alt: "Buffet line with chafing dishes and fresh floral décor" },
+  { src: buffetSetupClean.url, alt: "Elegant buffet line with chafing dishes and hydrangea centerpieces" },
   { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners", caption: "Fiesta Buffet" },
   { src: fiestaBuffetReplacement.url, alt: "Festive buffet line with chafing dishes, piñatas and serape runners", caption: "Buffet Line" },
   { src: diningRoomFireplace.url, alt: "Warm dining room with traditional fireplace and Mexican folk art" },
