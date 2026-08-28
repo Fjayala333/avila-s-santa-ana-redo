@@ -196,6 +196,8 @@ export const Route = createFileRoute("/fiestas-celebrations")({
 });
 
 function FiestasCelebrationsPage() {
+  const [activeBanquetMenu, setActiveBanquetMenu] = useState(banquetMenus[0]!.id);
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
