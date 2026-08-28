@@ -16,6 +16,18 @@ import {
   banquetAddOns,
   banquetPolicies,
 } from "@/lib/site-data";
+import banquetLongTable from "@/assets/IMG_0560.jpg.asset.json";
+import banquetRoomWide from "@/assets/IMG_0562.jpg.asset.json";
+import buffetSetup from "@/assets/IMG_2045.jpg.asset.json";
+import fiestaBuffet from "@/assets/IMG_2053.jpg.asset.json";
+
+const eventPhotos = [
+  { src: banquetLongTable.url, alt: "Banquet room set with a long table and floral centerpieces" },
+  { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
+  { src: buffetSetup.url, alt: "Buffet line with chafing dishes and fresh floral décor" },
+  { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners" },
+];
+
 
 function BeverageAndAddOnsAccordion() {
   return (
