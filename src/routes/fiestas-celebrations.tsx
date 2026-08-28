@@ -282,7 +282,7 @@ function FiestasCelebrationsPage() {
                 </TabsList>
                 {banquetMenus.map((menu) => (
                   <TabsContent key={menu.id} value={menu.id} className="mt-8">
-                    <div className="animate-fade-up rounded-sm border border-border bg-card p-6 sm:p-8">
+                    <div className="animate-fade-up max-h-[70vh] overflow-y-auto rounded-sm border border-border bg-card p-6 sm:p-8">
                       <p className="text-center text-sm text-muted-foreground">{menu.blurb}</p>
                       {menu.groups ? <MenuGroups groups={menu.groups} /> : null}
                     </div>
