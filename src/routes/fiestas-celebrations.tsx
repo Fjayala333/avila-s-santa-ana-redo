@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -8,6 +9,7 @@ import {
 } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 import {
   site,
   diningSlides,
@@ -17,6 +19,58 @@ import {
   banquetPolicies,
   fiestaBentoImages,
 } from "@/lib/site-data";
+
+function BentoTile({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            timer = setTimeout(() => setVisible(true), delay);
+            observer.disconnect();
+          }
+        }
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
+    );
+
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+    };
+  }, [delay]);
+
+  return (
+    <figure
+      ref={ref as React.Ref<HTMLElement>}
+      className={cn("bento-reveal", visible && "bento-reveal-in", className)}
+    >
+      {children}
+    </figure>
+  );
+}
+
 const bentoPos = [
   "lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:row-span-1",
   "lg:col-start-5 lg:col-span-2 lg:row-start-1 lg:row-span-2",
@@ -52,10 +106,9 @@ function FiestaBentoHero() {
         </h1>
       </div>
       {fiestaBentoImages.map((photo, i) => (
-        <Reveal
+        <BentoTile
           key={photo.src}
-          delay={i * 100}
-          as="figure"
+          delay={i * 80}
           className={`img-zoom-host shine-host tilt-host relative overflow-hidden rounded-sm ${bentoPos[i] ?? ""}`}
         >
           <img
@@ -69,7 +122,7 @@ function FiestaBentoHero() {
               {photo.caption}
             </figcaption>
           ) : null}
-        </Reveal>
+        </BentoTile>
       ))}
     </div>
   );
@@ -147,6 +200,31 @@ function FiestasCelebrationsPage() {
         <section className="bg-secondary/60">
           <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
             <FiestaBentoHero />
+
+            <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-3">
+              <Reveal className="card-motion rounded-sm border border-border bg-card p-6 text-center">
+                <p className="text-lg text-primary">✦</p>
+                <h3 className="mt-2 font-display text-lg text-foreground">Three Rooms</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  From the patio to the Grand Hall, seats 10 to 80.
+                </p>
+              </Reveal>
+              <Reveal delay={100} className="card-motion rounded-sm border border-border bg-card p-6 text-center">
+                <p className="text-lg text-primary">✦</p>
+                <h3 className="mt-2 font-display text-lg text-foreground">Full Service</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  Menus, buffets, and beverage packages for any size.
+                </p>
+              </Reveal>
+              <Reveal delay={200} className="card-motion rounded-sm border border-border bg-card p-6 text-center">
+                <p className="text-lg text-primary">✦</p>
+                <h3 className="mt-2 font-display text-lg text-foreground">Since 1966</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  Three generations of the Avila family, hosting yours.
+                </p>
+              </Reveal>
+            </div>
+
             <div className="mx-auto mt-10 max-w-2xl text-center">
               <p className="text-lg leading-relaxed text-muted-foreground">
                 Since 1966, Avila's El Ranchito has hosted the celebrations that matter — birthdays,
