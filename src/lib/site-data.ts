@@ -950,6 +950,9 @@ export const fiestaBentoImages = [
   { src: u("388eb6aa-e353-42a4-a2b0-ecf90732fb7d"), alt: "Dining room with stone fireplace and wooden tables" },
   { src: diningRoomWide.url, alt: "Spacious dining room with woven chairs and rustic wood ceilings" },
   { src: u("a3be50dc-364a-4135-9274-e34b4c5c70d1"), alt: "Interior dining room with fireplace and rustic decor" },
+  { src: babyShowerRoom.url, alt: "Baby shower setup with pink balloons and long banquet tables", caption: "Baby Showers" },
+  { src: intimateLongTable.url, alt: "Intimate private room with a candlelit long table set for dinner" },
+  { src: balloonPartyRoom.url, alt: "Birthday party room decorated with gold and black balloons" },
 ];
 
 export const hours = [
