@@ -221,6 +221,16 @@ function FiestasCelebrationsPage() {
           </Reveal>
         </section>
 
+        <section className="bg-secondary/60">
+          <div className="mx-auto max-w-5xl px-4 py-16 lg:py-24">
+            <SectionHeading kicker="Start Planning" title="Book Your Celebration">
+              Answer a few quick questions and our events team will reach out.
+            </SectionHeading>
+            <Reveal className="mt-10 flex justify-center">
+              <FiestaChatInquiry />
+            </Reveal>
+          </div>
+        </section>
 
       </main>
 
