@@ -60,6 +60,9 @@ export {
   PrivateFiesta,
   SignatureExperience,
   Reviews,
+  SectionHeading,
+  MenuGroups,
+  FiestaChatInquiry,
 } from "./components/site/Sections";
 export { SiteFooter } from "./components/site/SiteFooter";
 export { SiteHeader } from "./components/site/SiteHeader";
