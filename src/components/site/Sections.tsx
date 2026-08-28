@@ -518,7 +518,7 @@ export function FiestaChatInquiry() {
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex w-full max-w-xl flex-col gap-3 rounded-sm border border-border bg-card p-6 shadow-sm sm:p-8">
       <div>
         <h3 className="font-display text-2xl text-foreground">Plan Your Fiesta</h3>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -526,7 +526,7 @@ export function FiestaChatInquiry() {
         </p>
       </div>
 
-      <FiestaBubble>Hi! What are we celebrating? 🎉</FiestaBubble>
+      <FiestaBubble>Hi! What are we celebrating?</FiestaBubble>
       <div className="animate-fade-up flex flex-wrap gap-2" style={{ animationDelay: "120ms" }}>
         {fiestaEventTypes.map((type) => (
           <button
