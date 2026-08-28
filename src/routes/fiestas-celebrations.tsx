@@ -236,14 +236,6 @@ function FiestasCelebrationsPage() {
                     className="img-zoom aspect-[16/9] w-full object-cover"
                   />
                 </Reveal>
-                <Reveal delay={120} className="img-zoom-host shine-host overflow-hidden rounded-sm">
-                  <img
-                    src={diningSlides[0]!.src}
-                    alt={diningSlides[0]!.alt}
-                    loading="lazy"
-                    className="img-zoom aspect-[4/3] w-full object-cover"
-                  />
-                </Reveal>
               </div>
               <Reveal delay={160} className="rounded-sm border border-border bg-card p-7 shadow-xl">
                 <FiestaChatInquiry />
