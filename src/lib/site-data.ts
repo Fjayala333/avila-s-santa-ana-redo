@@ -10,6 +10,9 @@ import buffetSetup from "../assets/IMG_2045.jpg.asset.json";
 import fiestaBuffet from "../assets/IMG_2053.jpg.asset.json";
 import diningRoomFireplace from "../assets/Avila_sSantaAna-41.jpg.asset.json";
 import diningRoomWide from "../assets/Avila_sSantaAna-42.jpg.asset.json";
+import babyShowerRoom from "../assets/fiesta-6e7c8bdf.png.asset.json";
+import intimateLongTable from "../assets/fiesta-27c2f9ac.png.asset.json";
+import balloonPartyRoom from "../assets/fiesta-6c1c6251.png.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",
