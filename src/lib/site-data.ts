@@ -4,6 +4,12 @@ import tray1 from "../assets/tray-catering1.jpg.asset.json";
 import tray2 from "../assets/tray-images.jpg.asset.json";
 import tray3 from "../assets/tray-images-2.jpg.asset.json";
 import tray4 from "../assets/tray-images-3.jpg.asset.json";
+import banquetLongTable from "../assets/IMG_0560.jpg.asset.json";
+import banquetRoomWide from "../assets/IMG_0562.jpg.asset.json";
+import buffetSetup from "../assets/IMG_2045.jpg.asset.json";
+import fiestaBuffet from "../assets/IMG_2053.jpg.asset.json";
+import diningRoomFireplace from "../assets/Avila_sSantaAna-41.jpg.asset.json";
+import diningRoomWide from "../assets/Avila_sSantaAna-42.jpg.asset.json";
 
 export const site = {
   name: "Avila's El Ranchito",
@@ -927,6 +933,20 @@ export const banquetPricingTeasers = [
     price: "26+",
     description: "Macarena Combo, Sizzling Fajitas, Mexico City, Lunch Buffet or Cocktail Party.",
   },
+];
+
+export const fiestaBentoImages = [
+  { src: banquetLongTable.url, alt: "Banquet room set with a long table and floral centerpieces" },
+  { src: u("717473c5-0bbd-4290-8fbf-f428475cac70"), alt: "Spacious dining area with bamboo ceiling", caption: "Grand Hall" },
+  { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
+  { src: buffetSetup.url, alt: "Buffet line with chafing dishes and fresh floral décor" },
+  { src: u("429c0bce-1ef2-4cd7-8183-185298289842"), alt: "Outdoor patio with fire pit table" },
+  { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners", caption: "Fiesta Buffet" },
+  { src: u("db19edcc-ea2d-4713-b43b-19b3b3436e2c"), alt: "Private dining room with bamboo ceiling and stone fireplace" },
+  { src: diningRoomFireplace.url, alt: "Warm dining room with traditional fireplace and Mexican folk art" },
+  { src: u("388eb6aa-e353-42a4-a2b0-ecf90732fb7d"), alt: "Dining room with stone fireplace and wooden tables" },
+  { src: diningRoomWide.url, alt: "Spacious dining room with woven chairs and rustic wood ceilings" },
+  { src: u("a3be50dc-364a-4135-9274-e34b4c5c70d1"), alt: "Interior dining room with fireplace and rustic decor" },
 ];
 
 export const hours = [

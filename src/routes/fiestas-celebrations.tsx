@@ -15,22 +15,65 @@ import {
   beverageOptions,
   banquetAddOns,
   banquetPolicies,
+  fiestaBentoImages,
 } from "@/lib/site-data";
-import banquetLongTable from "@/assets/IMG_0560.jpg.asset.json";
-import banquetRoomWide from "@/assets/IMG_0562.jpg.asset.json";
-import buffetSetup from "@/assets/IMG_2045.jpg.asset.json";
-import fiestaBuffet from "@/assets/IMG_2053.jpg.asset.json";
-import diningRoomFireplace from "@/assets/Avila_sSantaAna-41.jpg.asset.json";
-import diningRoomWide from "@/assets/Avila_sSantaAna-42.jpg.asset.json";
-
-const eventPhotos = [
-  { src: banquetLongTable.url, alt: "Banquet room set with a long table and floral centerpieces" },
-  { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
-  { src: buffetSetup.url, alt: "Buffet line with chafing dishes and fresh floral décor" },
-  { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners" },
-  { src: diningRoomFireplace.url, alt: "Warm dining room with traditional fireplace and Mexican folk art" },
-  { src: diningRoomWide.url, alt: "Spacious dining room with woven chairs and rustic wood ceilings" },
+const bentoPos = [
+  "lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:row-span-1",
+  "lg:col-start-5 lg:col-span-2 lg:row-start-1 lg:row-span-2",
+  "lg:col-start-3 lg:col-span-1 lg:row-start-2 lg:row-span-1",
+  "lg:col-start-4 lg:col-span-1 lg:row-start-2 lg:row-span-1",
+  "lg:col-start-1 lg:col-span-1 lg:row-start-3 lg:row-span-1",
+  "lg:col-start-2 lg:col-span-2 lg:row-start-3 lg:row-span-2",
+  "lg:col-start-4 lg:col-span-2 lg:row-start-3 lg:row-span-1",
+  "lg:col-start-6 lg:col-span-1 lg:row-start-3 lg:row-span-2",
+  "lg:col-start-4 lg:col-span-1 lg:row-start-4 lg:row-span-1",
+  "lg:col-start-5 lg:col-span-1 lg:row-start-4 lg:row-span-1",
+  "lg:col-start-1 lg:col-span-1 lg:row-start-4 lg:row-span-1",
 ];
+
+const kenBurnsCells = new Set([1, 5, 7]);
+
+function FiestaBentoHero() {
+  return (
+    <div className="grid grid-cols-2 auto-rows-[10rem] gap-3 lg:grid-cols-6 lg:auto-rows-[9rem]">
+      <div className="animate-float relative col-span-2 flex min-h-[10rem] flex-col justify-center overflow-hidden rounded-sm bg-ink p-6 text-ink-foreground lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-2 lg:min-h-0 lg:p-8">
+        <div
+          aria-hidden="true"
+          className="animate-blob pointer-events-none absolute -right-10 -top-10 size-40 rounded-full bg-primary/25 blur-2xl"
+        />
+        <div
+          aria-hidden="true"
+          className="animate-blob pointer-events-none absolute -bottom-12 -left-8 size-36 rounded-full bg-primary/15 blur-2xl"
+          style={{ animationDelay: "2.5s" }}
+        />
+        <p className="relative font-sans text-xs font-bold uppercase tracking-[0.2em] text-primary">Since 1966</p>
+        <h1 className="relative mt-3 font-display text-2xl leading-[1.15] sm:text-3xl">
+          Weddings, Quinceañeras &amp; Every Fiesta In Between
+        </h1>
+      </div>
+      {fiestaBentoImages.map((photo, i) => (
+        <Reveal
+          key={photo.src}
+          delay={i * 100}
+          as="figure"
+          className={`img-zoom-host shine-host tilt-host relative overflow-hidden rounded-sm ${bentoPos[i] ?? ""}`}
+        >
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            loading="lazy"
+            className={`img-zoom h-full w-full object-cover ${kenBurnsCells.has(i) ? "animate-ken-burns" : ""}`}
+          />
+          {"caption" in photo && photo.caption ? (
+            <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-3 font-sans text-xs font-bold uppercase tracking-widest text-ink-foreground">
+              {photo.caption}
+            </figcaption>
+          ) : null}
+        </Reveal>
+      ))}
+    </div>
+  );
+}
 
 
 function BeverageAndAddOnsAccordion() {
@@ -102,24 +145,21 @@ function FiestasCelebrationsPage() {
       <SiteHeader />
       <main>
         <section className="bg-secondary/60">
-          <div className="mx-auto max-w-5xl px-4 py-16 text-center lg:py-24">
-            <p className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-primary">
-              Banquets &amp; Private Events
-            </p>
-            <h1 className="mt-4 font-display text-4xl leading-[1.1] text-foreground sm:text-5xl">
-              Weddings, Quinceañeras &amp; Every Fiesta In Between
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Since 1966, Avila's El Ranchito has hosted the celebrations that matter — birthdays,
-              anniversaries, showers, wedding receptions, celebrations of life and office parties.
-              Full menus, buffet packages and beverage options below.
-            </p>
-            <a
-              href={site.phoneHref}
-              className="cta cta-glow mt-8 inline-flex rounded-sm bg-primary px-6 py-3 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
-            >
-              Call to Book: {site.phone}
-            </a>
+          <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+            <FiestaBentoHero />
+            <div className="mx-auto mt-10 max-w-2xl text-center">
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Since 1966, Avila's El Ranchito has hosted the celebrations that matter — birthdays,
+                anniversaries, showers, wedding receptions, celebrations of life and office parties.
+                Full menus, buffet packages and beverage options below.
+              </p>
+              <a
+                href={site.phoneHref}
+                className="cta cta-glow mt-6 inline-flex rounded-sm bg-primary px-6 py-3 font-sans text-xs font-bold uppercase tracking-widest text-primary-foreground hover:opacity-90"
+              >
+                Call to Book: {site.phone}
+              </a>
+            </div>
           </div>
         </section>
 
@@ -220,32 +260,6 @@ function FiestasCelebrationsPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
-          <SectionHeading kicker="From Our Fiestas" title="Set the Table, Set the Scene">
-            Real events at Avila's El Ranchito Santa Ana — banquet seating and buffet setups.
-          </SectionHeading>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {eventPhotos.map((photo, i) => (
-              <Reveal
-                key={photo.src}
-                delay={i * 120}
-                className="img-zoom-host shine-host group overflow-hidden rounded-sm"
-              >
-                <figure className="relative">
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    loading="lazy"
-                    className="img-zoom aspect-[4/3] w-full object-cover"
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 font-sans text-xs font-bold uppercase tracking-widest text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    {photo.alt}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </section>
       </main>
 
       <SiteFooter />
