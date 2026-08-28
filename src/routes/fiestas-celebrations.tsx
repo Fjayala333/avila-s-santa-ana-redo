@@ -16,6 +16,18 @@ import {
   banquetAddOns,
   banquetPolicies,
 } from "@/lib/site-data";
+import banquetLongTable from "@/assets/IMG_0560.jpg.asset.json";
+import banquetRoomWide from "@/assets/IMG_0562.jpg.asset.json";
+import buffetSetup from "@/assets/IMG_2045.jpg.asset.json";
+import fiestaBuffet from "@/assets/IMG_2053.jpg.asset.json";
+
+const eventPhotos = [
+  { src: banquetLongTable.url, alt: "Banquet room set with a long table and floral centerpieces" },
+  { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
+  { src: buffetSetup.url, alt: "Buffet line with chafing dishes and fresh floral décor" },
+  { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners" },
+];
+
 
 function BeverageAndAddOnsAccordion() {
   return (
@@ -203,7 +215,35 @@ function FiestasCelebrationsPage() {
             </div>
           </div>
         </section>
+
+        <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
+          <SectionHeading kicker="From Our Fiestas" title="Set the Table, Set the Scene">
+            Real events at Avila's El Ranchito Santa Ana — banquet seating and buffet setups.
+          </SectionHeading>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {eventPhotos.map((photo, i) => (
+              <Reveal
+                key={photo.src}
+                delay={i * 120}
+                className="img-zoom-host shine-host group overflow-hidden rounded-sm"
+              >
+                <figure className="relative">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="img-zoom aspect-[4/3] w-full object-cover"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 font-sans text-xs font-bold uppercase tracking-widest text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {photo.alt}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </section>
       </main>
+
       <SiteFooter />
     </div>
   );
