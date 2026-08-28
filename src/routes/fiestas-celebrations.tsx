@@ -223,11 +223,8 @@ function FiestasCelebrationsPage() {
 
         <section className="bg-secondary/60">
           <div className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
-            <SectionHeading kicker="See the Space" title="Indoor Patio &amp; Banquet Rooms">
-              A quick look at where your celebration will happen.
-            </SectionHeading>
-            <div className="mt-10">
-              <Reveal delay={160} className="mx-auto max-w-2xl rounded-sm border border-border bg-card p-7 shadow-xl">
+            <div className="mx-auto max-w-2xl">
+              <Reveal delay={160} className="rounded-sm border border-border bg-card p-7 shadow-xl">
                 <FiestaChatInquiry />
               </Reveal>
             </div>
