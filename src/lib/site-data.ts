@@ -943,7 +943,6 @@ export const fiestaBentoImages = [
   { src: u("717473c5-0bbd-4290-8fbf-f428475cac70"), alt: "Spacious dining area with bamboo ceiling", caption: "Grand Hall" },
   { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
   { src: buffetSetup.url, alt: "Buffet line with chafing dishes and fresh floral décor" },
-  { src: u("429c0bce-1ef2-4cd7-8183-185298289842"), alt: "Outdoor patio with fire pit table" },
   { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners", caption: "Fiesta Buffet" },
   { src: u("db19edcc-ea2d-4713-b43b-19b3b3436e2c"), alt: "Private dining room with bamboo ceiling and stone fireplace" },
   { src: diningRoomFireplace.url, alt: "Warm dining room with traditional fireplace and Mexican folk art" },
