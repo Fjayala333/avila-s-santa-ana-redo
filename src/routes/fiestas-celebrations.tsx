@@ -76,7 +76,6 @@ const bentoPos = [
   "lg:col-start-5 lg:col-span-2 lg:row-start-1 lg:row-span-2",
   "lg:col-start-3 lg:col-span-1 lg:row-start-2 lg:row-span-1",
   "lg:col-start-4 lg:col-span-1 lg:row-start-2 lg:row-span-1",
-  "lg:col-start-1 lg:col-span-1 lg:row-start-3 lg:row-span-1",
   "lg:col-start-2 lg:col-span-2 lg:row-start-3 lg:row-span-2",
   "lg:col-start-4 lg:col-span-2 lg:row-start-3 lg:row-span-1",
   "lg:col-start-6 lg:col-span-1 lg:row-start-3 lg:row-span-2",
@@ -88,7 +87,7 @@ const bentoPos = [
   "lg:col-start-5 lg:col-span-2 lg:row-start-5 lg:row-span-2",
 ];
 
-const kenBurnsCells = new Set([1, 5, 7]);
+const kenBurnsCells = new Set([1, 4, 6]);
 
 function FiestaBentoHero() {
   return (
