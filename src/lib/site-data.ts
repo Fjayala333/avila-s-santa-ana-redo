@@ -9,6 +9,7 @@ import banquetRoomWide from "../assets/IMG_0562.jpg.asset.json";
 import buffetSetup from "../assets/IMG_2045.jpg.asset.json";
 import fiestaBuffet from "../assets/IMG_2053.jpg.asset.json";
 import fiestaBuffetReplacement from "../assets/fiesta-buffet-replacement.png.asset.json";
+import buffetSetupClean from "../assets/buffet-setup-clean.png.asset.json";
 import diningRoomFireplace from "../assets/Avila_sSantaAna-41.jpg.asset.json";
 import diningRoomWide from "../assets/Avila_sSantaAna-42.jpg.asset.json";
 import babyShowerRoom from "../assets/fiesta-6e7c8bdf.png.asset.json";
