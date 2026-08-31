@@ -7,7 +7,6 @@ import tray4 from "../assets/tray-images-3.jpg.asset.json";
 import banquetLongTable from "../assets/IMG_0560.jpg.asset.json";
 import banquetRoomWide from "../assets/IMG_0562.jpg.asset.json";
 import buffetSetup from "../assets/IMG_2045.jpg.asset.json";
-import fiestaBuffet from "../assets/IMG_2053.jpg.asset.json";
 import fiestaBuffetReplacement from "../assets/fiesta-buffet-replacement.png.asset.json";
 import buffetSetupClean from "../assets/buffet-setup-clean.png.asset.json";
 import diningRoomFireplace from "../assets/Avila_sSantaAna-41.jpg.asset.json";
@@ -945,7 +944,7 @@ export const fiestaBentoImages = [
   { src: u("717473c5-0bbd-4290-8fbf-f428475cac70"), alt: "Spacious dining area with bamboo ceiling", caption: "Grand Hall" },
   { src: banquetRoomWide.url, alt: "Private banquet room ready for a seated celebration" },
   { src: buffetSetupClean.url, alt: "Elegant buffet line with chafing dishes and hydrangea centerpieces" },
-  { src: fiestaBuffet.url, alt: "Festive buffet setup with piñatas and serape runners", caption: "Fiesta Buffet" },
+  
   { src: fiestaBuffetReplacement.url, alt: "Festive buffet line with chafing dishes, piñatas and serape runners", caption: "Buffet Line" },
   { src: diningRoomFireplace.url, alt: "Warm dining room with traditional fireplace and Mexican folk art" },
   { src: u("388eb6aa-e353-42a4-a2b0-ecf90732fb7d"), alt: "Dining room with stone fireplace and wooden tables" },
